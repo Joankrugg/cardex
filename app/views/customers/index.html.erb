@@ -1,0 +1,18 @@
+<%= link_to 'new customer', new_customer_path %><br>
+Download
+<%= link_to 'CSV', customers_path(format: "csv") %><br>
+<% @customers.each do |f| %>
+  <% if f.name.present? %>
+    <%= f.name %>
+  <% end %>
+  <% if f.mail.present? %>
+    <%= f.mail %>
+  <% end %>
+<% end %>
+<br>
+
+<h2> Import customers</h2>
+<%= form_tag import_customers_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "import" %>
+<% end %>

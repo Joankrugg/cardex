@@ -10,10 +10,241 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_31_162758) do
+ActiveRecord::Schema.define(version: 2022_07_04_134452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "anglophone_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "brindos_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "booking"
+    t.string "address"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "manager"
+    t.string "status"
+    t.integer "terms"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "mail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "francophone_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ghso_spa_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "leognan_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "megeve_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "millesime_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "home"
+    t.string "address"
+  end
+
+  create_table "porto_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "raba_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+  end
+
+  create_table "raba_spa_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sacy_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sacy_spa_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "phone"
+  end
+
+  create_table "theoule_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "birth"
+    t.string "segment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +254,10 @@ ActiveRecord::Schema.define(version: 2022_05_31_162758) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end

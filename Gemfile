@@ -21,6 +21,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'csv-importer'
+gem 'activerecord-import', '~> 0.15.0'
+gem 'forest_liana'
+gem 'rails_admin', '~> 3.0'
+gem 'rails_admin_import', '~> 3.0', '>= 3.0.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -29,6 +34,8 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'roo', '~> 2.8'
+gem 'pg_search', '~> 2.3.0'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
