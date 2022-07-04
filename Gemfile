@@ -23,7 +23,6 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'csv-importer'
 gem 'activerecord-import', '~> 0.15.0'
-gem 'forest_liana'
 gem 'rails_admin', '~> 3.0'
 gem 'rails_admin_import', '~> 3.0', '>= 3.0.3'
 

@@ -11,7 +11,6 @@
   resources :companies do
     collection {post :import}
   end
-  mount ForestLiana::Engine => '/forest'
   devise_for :users
   root to: 'pages#home'
   resources :customers, only: [:index, :new, :create] do
