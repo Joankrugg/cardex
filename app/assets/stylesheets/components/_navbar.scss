@@ -1,4 +1,7 @@
 .navbar-lewagon {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
   justify-content: space-between;
   background: white;
 }
@@ -8,5 +11,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 100px;
+}
+
+.modal-dialog{
+  z-index: 10;
 }

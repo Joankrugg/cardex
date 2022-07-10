@@ -1,0 +1,34 @@
+.btn-nav{
+  border: solid 1px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-image: linear-gradient(#b99848, #e1ca95);
+}
+
+.btn-nav:hover{
+  background-image: linear-gradient(white, white);
+}
+
+.press{
+  text-align: center;
+  border: solid 1px;
+  background-image: linear-gradient(#b99848, #e1ca95);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.press:hover{
+  background: white;
+}
+
+.press-inverted{
+  text-align: center;
+  border: solid 1px;
+  background: white;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.press-inverted:hover{
+  background-image: linear-gradient(#b99848, #e1ca95);
+}

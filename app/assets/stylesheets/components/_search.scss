@@ -1,0 +1,32 @@
+.search-form-control{
+  position: relative;
+  border-radius: 4px;
+}
+
+#search{
+  padding-left: 40px;
+}
+
+.search-img{
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+.fas.fa-search{
+  font-size: 24px;
+}
+
+.validate{
+  background-image: linear-gradient(#b99848, #e1ca95);
+  position: absolute;
+  border: 1px solid;
+  padding: 3px 6px;
+  border-radius: 4px;
+  top: 4px;
+  right: 5px;
+}
+
+.validate:hover{
+  background-image: linear-gradient(white, white);
+}

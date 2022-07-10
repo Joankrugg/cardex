@@ -1,36 +1,100 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/da2krghvd/image/upload/v1657396983/Mille%CC%81sime_zsbeqt.webp" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+    <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#triggers">
+      Cardex
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="triggers" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cardex</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <% if user_signed_in? %>
+            <div class="row">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <div class="col-12 cardex">Se déconnecter</div>
+              <% end %>
+            </div>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <div class="col-12 cardex">Se connecter</div>
+            <% end %>
+          <% end %>
+          <div class="row">
+            <%= link_to millesime_customers_path do %>
+              <div class="col-12 cardex">Millésime</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to francophone_customers_path do %>
+              <div class="col-12 cardex">Millésime FR</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to anglophone_customers_path do %>
+              <div class="col-12 cardex">Millésime EN</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to raba_customers_path do %>
+              <div class="col-12 cardex">Le Domaine de Raba</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to leognan_customers_path do %>
+              <div class="col-12 cardex">Le Manège</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to sacy_customers_path do %>
+              <div class="col-12 cardex">Le Château de Sacy</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to megeve_customers_path do %>
+              <div class="col-12 cardex">Le Soleil d'Or</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to brindos_customers_path do %>
+              <div class="col-12 cardex">Brindos Lac et Chateau</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to theoule_customers_path do %>
+              <div class="col-12 cardex">La Plage Blanche</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to porto_customers_path do %>
+              <div class="col-12 cardex">Le Cocorico</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <%= link_to rails_admin_path do %>
+              <div class="col-12 cardex">Admin</div>
+            <% end %>
+          </div>
+          <div class="row">
+            <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-12 cardex">Envoyer un message</div></a>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+

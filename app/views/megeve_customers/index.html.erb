@@ -1,0 +1,83 @@
+<div class="container bloc">
+  <div class="row">
+    <%= link_to 'new megeve customer', new_megeve_customer_path %>
+  </div>
+    Download
+  <div class="row">
+    <%= link_to 'CSV', megeve_customers_path(format: "csv") %>
+  </div>
+  <div class="row">
+    <%= link_to 'CSV FILTRE', megeve_customers_path(format: "csv") %>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 mx-auto">
+      <%= form_tag(megeve_customers_path, method: :get) do %>
+        <div class="search-form-control form-group">
+          <i class="fas fa-search search-img"></i>
+          <%= text_field_tag :search, nil, class: "form-control string required", autocomplete: 'off'%>
+          <div type="submit" class="validate">
+            Allons-y
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <%= @megeve_customers.count %> résultats
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <h3>Titre</h3>
+    </div>
+    <div class="col-2">
+      <h3>Nom</h3>
+    </div>
+    <div class="col-2">
+      <h3>Ville</h3>
+    </div>
+    <div class="col-2">
+      <h3>Pays</h3>
+    </div>
+    <div class="col-2">
+      <h3>Email</h3>
+    </div>
+  </div>
+  <% @megeve_customers.each do |f| %>
+    <%= link_to edit_megeve_customer_path(f) do %>
+      <div class="row customer">
+        <div class="col-2">
+          <% if f.genre.present? %>
+            <%= f.genre.downcase.capitalize %>
+          <% end %>
+        </div>
+        <div class="col-2">
+          <% if f.name.present? %>
+            <%= f.name.upcase %>
+          <% end %>
+        </div>
+        <div class="col-2">
+          <% if f.city.present? %>
+            <%= f.city.downcase.capitalize  %>
+          <% end %>
+        </div>
+        <div class="col-2">
+          <% if f.country.present? %>
+            <%= f.country.downcase.capitalize  %>
+          <% end %>
+        </div>
+        <div class="col-2">
+          <% if f.email.present? %>
+            <%= f.email %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <br>
+</div>
+
+<h2> Import customers</h2>
+<%= form_tag import_megeve_customers_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "import" %>
+<% end %>

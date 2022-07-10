@@ -1,1 +1,15 @@
-// Specific CSS for your home-page
+.cardex{
+  text-align: center;
+  background: white;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.cardex:hover{
+  background-image: linear-gradient(#b99848, #e1ca95);
+  color: white;
+}
+
+.bloc{
+  padding: 80px 0px;
+}

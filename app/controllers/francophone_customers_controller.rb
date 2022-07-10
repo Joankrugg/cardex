@@ -1,0 +1,57 @@
+require 'csv'
+class FrancophoneCustomersController < ApplicationController
+  def index
+    if params[:search].present?
+      @francophone_customers = FrancophoneCustomer.francophone_search(params[:search])
+      respond_to do |format|
+        format.html
+        format.csv { send_data @francophone_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
+      end
+    else
+      @francophone_customers = FrancophoneCustomer.all
+      respond_to do |format|
+        format.html
+        format.csv { send_data @francophone_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
+      end
+    end
+  end
+
+  def new
+    @francophone_customer = FrancophoneCustomer.new
+  end
+
+  def create
+    @francophone_customer = FrancophoneCustomer.new(francophone_customer_params)
+    if @francophone_customer.save
+      redirect_to root_path
+
+    else
+      render :new
+    end
+  end
+
+  def import
+    FrancophoneCustomer.import(params[:file])
+    redirect_to root_url, notice: 'francophone_customers imported.'
+  end
+  def export
+    if params[:search].present?
+      @mimi_customers = FrancophoneCustomer.francophone_search(params[:search])
+      respond_to do |format|
+        format.html
+        format.csv { send_data @mimi_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
+      end
+    else
+      @francophone_customers = FrancophoneCustomer.all
+      respond_to do |format|
+        format.html
+        format.csv { send_data @mimi_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
+      end
+    end
+  end
+  private
+
+  def francophone_customer_params
+    params.require(:francophone_customer).permit(:name, :mail)
+  end
+end

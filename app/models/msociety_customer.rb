@@ -1,0 +1,2 @@
+class MsocietyCustomer < ApplicationRecord
+end
