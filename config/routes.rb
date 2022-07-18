@@ -1,4 +1,6 @@
  Rails.application.routes.draw do
+  resources :mail_orders
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :companies do
     collection {post :import}

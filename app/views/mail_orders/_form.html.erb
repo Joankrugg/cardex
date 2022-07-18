@@ -1,0 +1,40 @@
+<div class="container bloc">
+  <div class="mail-order-form">
+    <%= simple_form_for @mail_order do |f| %>
+      <div class="row">
+        <div class="col-12 col-md-9 col-lg-8 mx-auto">
+          <%= f.input :goal %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-9 col-lg-8 mx-auto">
+          <%= f.input :title %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-9 col-lg-8 mx-auto">
+          <%= f.input :photo %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-9 col-lg-8 mx-auto">
+          <%= f.input :text %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-9 col-lg-8 mx-auto">
+          <%= f.input :send_date %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-9 col-lg-8 mx-auto">
+          <%= f.button :submit, 'valider' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+

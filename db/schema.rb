@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_07_085428) do
+ActiveRecord::Schema.define(version: 2022_07_18_115546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -167,6 +167,17 @@ ActiveRecord::Schema.define(version: 2022_07_07_085428) do
     t.string "messageid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mail_orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.datetime "send_date"
+    t.text "text"
+    t.string "goal"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_mail_orders_on_user_id"
   end
 
   create_table "megeve_customers", force: :cascade do |t|
