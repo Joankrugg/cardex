@@ -1,5 +1,6 @@
 require 'csv'
 class SacyCustomersController < ApplicationController
+  before_action :set_sacy_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @sacy_customers = SacyCustomer.sacy_search(params[:search])
@@ -29,6 +30,17 @@ class SacyCustomersController < ApplicationController
       render :new
     end
   end
+  def edit
+
+  end
+
+  def update
+    if @sacy_customer.update(sacy_customer_params)
+      redirect_to sacy_customers_path
+    else
+      render :edit
+    end
+  end
 
   def import
     SacyCustomer.import(params[:file])
@@ -50,7 +62,9 @@ class SacyCustomersController < ApplicationController
     end
   end
   private
-
+  def set_sacy_customer
+    @sacy_customer = SacyCustomer.find(params[:id])
+  end
   def sacy_customer_params
     params.require(:sacy_customer).permit(:name, :mail)
   end

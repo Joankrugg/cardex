@@ -5,7 +5,7 @@
   get 'la_plage_blanche', to:'pages#la_plage_blanche'
   get 'le_chateau_de_sacy', to:'pages#le_chateau_de_sacy'
   get 'le_domaine_de_raba', to:'pages#le_domaine_de_raba'
-  get 'le_grand_hotel', to:'pages#le_grand_hotel'
+  get 'le_soleil_d_or', to:'pages#le_grand_hotel_du_soleil_d_or'
   get 'le_manege', to:'pages#le_manege'
   resources :mail_orders
 

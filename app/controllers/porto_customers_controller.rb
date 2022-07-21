@@ -1,5 +1,6 @@
 require 'csv'
 class PortoCustomersController < ApplicationController
+  before_action :set_porto_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @porto_customers = PortoCustomer.porto_search(params[:search])
@@ -30,6 +31,18 @@ class PortoCustomersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @porto_customer.update(porto_customer_params)
+      redirect_to porto_customers_path
+    else
+      render :edit
+    end
+  end
+
   def import
     PortoCustomer.import(params[:file])
     redirect_to root_url, notice: 'porto_customers imported.'
@@ -50,7 +63,9 @@ class PortoCustomersController < ApplicationController
     end
   end
   private
-
+  def set_porto_customer
+    @porto_customer = PortoCustomer.find(params[:id])
+  end
   def porto_customer_params
     params.require(:porto_customer).permit(:name, :mail)
   end

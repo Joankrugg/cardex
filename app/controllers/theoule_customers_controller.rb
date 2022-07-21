@@ -1,5 +1,6 @@
 require 'csv'
 class TheouleCustomersController < ApplicationController
+  before_action :set_theoule_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @theoule_customers = TheouleCustomer.theoule_search(params[:search])
@@ -29,6 +30,17 @@ class TheouleCustomersController < ApplicationController
       render :new
     end
   end
+  def edit
+
+  end
+
+  def update
+    if @theoule_customer.update(theoule_customer_params)
+      redirect_to theoule_customers_path
+    else
+      render :edit
+    end
+  end
 
   def import
     TheouleCustomer.import(params[:file])
@@ -50,7 +62,9 @@ class TheouleCustomersController < ApplicationController
     end
   end
   private
-
+  def set_theoule_customer
+    @theoule_customer = TheouleCustomer.find(params[:id])
+  end
   def theoule_customer_params
     params.require(:theoule_customer).permit(:name, :mail)
   end

@@ -1,5 +1,6 @@
 require 'csv'
 class RabaCustomersController < ApplicationController
+  before_action :set_raba_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @raba_customers = RabaCustomer.raba_search(params[:search])
@@ -30,6 +31,18 @@ class RabaCustomersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @porto_customer.update(porto_customer_params)
+      redirect_to porto_customers_path
+    else
+      render :edit
+    end
+  end
+
   def import
     RabaCustomer.import(params[:file])
     redirect_to root_url, notice: 'raba_customers imported.'
@@ -50,6 +63,10 @@ class RabaCustomersController < ApplicationController
     end
   end
   private
+
+  def set_raba_customer
+    @raba_customer = RabaCustomer.find(params[:id])
+  end
 
   def raba_customer_params
     params.require(:raba_customer).permit(:name, :mail)

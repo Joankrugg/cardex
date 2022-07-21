@@ -1,5 +1,6 @@
 require 'csv'
 class MegeveCustomersController < ApplicationController
+  before_action :set_megeve_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @megeve_customers = MegeveCustomer.megeve_search(params[:search])
@@ -29,7 +30,17 @@ class MegeveCustomersController < ApplicationController
       render :new
     end
   end
+  def edit
 
+  end
+
+  def update
+    if @megeve_customer.update(megeve_customer_params)
+      redirect_to megeve_customers_path
+    else
+      render :edit
+    end
+  end
   def import
     MegeveCustomer.import(params[:file])
     redirect_to root_url, notice: 'megeve_customers imported.'
@@ -50,7 +61,9 @@ class MegeveCustomersController < ApplicationController
     end
   end
   private
-
+  def set_megeve_customer
+    @megeve_customer = MegeveCustomer.find(params[:id])
+  end
   def megeve_customer_params
     params.require(:megeve_customer).permit(:name, :mail)
   end

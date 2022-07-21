@@ -1,5 +1,6 @@
 require 'csv'
 class LeognanCustomersController < ApplicationController
+  before_action :set_leognan_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @leognan_customers = LeognanCustomer.leognan_search(params[:search])
@@ -29,7 +30,17 @@ class LeognanCustomersController < ApplicationController
       render :new
     end
   end
+  def edit
 
+  end
+
+  def update
+    if @leognan_customer.update(leognan_customer_params)
+      redirect_to leognan_customers_path
+    else
+      render :edit
+    end
+  end
   def import
     LeognanCustomer.import(params[:file])
     redirect_to root_url, notice: 'leognan_customers imported.'
@@ -50,8 +61,10 @@ class LeognanCustomersController < ApplicationController
     end
   end
   private
-
+  def set_leognan_customer
+    @leognan_customer = LeognanCustomer.find(params[:id])
+  end
   def leognan_customer_params
-    params.require(:leognan_customer).permit(:name, :mail)
+    params.require(:leognan_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe)
   end
 end
