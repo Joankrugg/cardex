@@ -1,5 +1,7 @@
 class TheouleCustomer < ApplicationRecord
-  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, presence: true, allow_blank: true
+  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, presence: true
+  validates :email, uniqueness: true
+  validates :name, presence: true
   include PgSearch::Model
   pg_search_scope :theoule_search,
     against: [ :city, :country, :name, :genre ],

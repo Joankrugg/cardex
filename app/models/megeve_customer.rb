@@ -1,6 +1,7 @@
 class MegeveCustomer < ApplicationRecord
   validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, presence: true
   validates :email, uniqueness: true
+  validates :name, presence: true
   include PgSearch::Model
   pg_search_scope :megeve_search,
     against: [ :city, :country, :name, :genre ],
