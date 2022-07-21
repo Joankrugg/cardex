@@ -1,4 +1,8 @@
-<div class="container bloc">
+<div class="zone"></div>
+<div class="container">
+  <div class="row">
+    <%= cl_image_tag 'https://res.cloudinary.com/da2krghvd/image/upload/v1657396895/Mille%CC%81sime_Etoiles_omdyek.png'%>
+  </div>
   <div class="row">
     <% if user_signed_in? && current_user.email.include?('@millesime-collection.com') || user_signed_in? && current_user.admin? %>
       <%= link_to new_mail_order_path do %>

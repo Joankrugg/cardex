@@ -25,7 +25,7 @@ gem 'csv-importer'
 gem 'activerecord-import', '~> 0.15.0'
 gem 'rails_admin', '~> 3.0'
 gem 'rails_admin_import', '~> 3.0', '>= 3.0.3'
-
+gem "cloudinary"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
