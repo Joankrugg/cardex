@@ -82,4 +82,4 @@ production:
   <<: *default
   database: cardex_production
   username: cardex
-  password: <%= ENV.delete("DATABASE_URL") %>
+  password: <%= ENV['CARDEX_DATABASE_PASSWORD'] %>
