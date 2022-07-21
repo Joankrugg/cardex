@@ -1,29 +1,33 @@
-<div class="container bloc">
-
-  <h2>Sign up</h2>
-
+<div class="zone"></div>
+<div class="container">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
+    <div class="row">
+      <h2>Sign up</h2>
+      <div class="col-lg-8 col-md-9 col-sm-10 col-12 mx-auto form">
+        <div class="row">
+          <%= f.input :email,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
+        </div>
+        <div class="row">
+          <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
+        </div>
+        <div class="row">
+          <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <%= f.button :submit, 'Valider', class: 'btn btn-validate' %>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
-
+   <%= render "devise/shared/links" %>
 </div>
