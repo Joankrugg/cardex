@@ -1,0 +1,2 @@
+class TheouleRestaurantCustomer < ApplicationRecord
+end

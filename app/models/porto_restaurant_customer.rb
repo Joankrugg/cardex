@@ -1,0 +1,2 @@
+class PortoRestaurantCustomer < ApplicationRecord
+end

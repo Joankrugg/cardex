@@ -1,5 +1,7 @@
 require 'csv'
 class BrindosCustomersController < ApplicationController
+  before_action :set_brindos_customer, only: [ :edit, :update ]
+
   def index
     if params[:search].present?
       @brindos_customers = BrindosCustomer.brindos_search(params[:search])
@@ -30,10 +32,23 @@ class BrindosCustomersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @brindos_customer.update(brindos_customer_params)
+      redirect_to brindos_customers_path
+    else
+      render :edit
+    end
+  end
+
   def import
     BrindosCustomer.import(params[:file])
     redirect_to root_url, notice: 'brindos_customers imported.'
   end
+
   def export
     if params[:search].present?
       @mimi_customers = BrindosCustomer.brindos_search(params[:search])
@@ -51,7 +66,11 @@ class BrindosCustomersController < ApplicationController
   end
   private
 
+  def set_brindos_customer
+    @brindos_customer = BrindosCustomer.find(params[:id])
+  end
+
   def brindos_customer_params
-    params.require(:brindos_customer).permit(:name, :mail)
+    params.require(:brindos_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe)
   end
 end

@@ -1,18 +1,18 @@
 <% if user_signed_in? && current_user.email.include?('millesime-collection.com') %>
   <div class="container bloc">
     <div class="row">
-      <%= link_to 'new porto customer', new_porto_customer_path %>
+      <%= link_to 'new brindos customer', new_brindos_customer_path %>
     </div>
       Download
     <div class="row">
-      <%= link_to 'CSV', porto_customers_path(format: "csv") %>
+      <%= link_to 'CSV', brindos_customers_path(format: "csv") %>
     </div>
     <div class="row">
-      <%= link_to 'CSV FILTRE', porto_customers_path(format: "csv") %>
+      <%= link_to 'CSV FILTRE', brindos_customers_path(format: "csv") %>
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 mx-auto">
-        <%= form_tag(porto_customers_path, method: :get) do %>
+        <%= form_tag(brindos_customers_path, method: :get) do %>
           <div class="search-form-control form-group">
             <i class="fas fa-search search-img"></i>
             <%= text_field_tag :search, nil, class: "form-control string required", autocomplete: 'off'%>
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="row">
-      <%= @porto_customers.count %> résultats
+      <%= @brindos_customers.count %> résultats
     </div>
     <div class="row">
       <div class="col-2">
@@ -43,8 +43,8 @@
         <h3>Email</h3>
       </div>
     </div>
-    <% @porto_customers.each do |f| %>
-      <%= link_to edit_porto_customer_path(f) do %>
+    <% @brindos_customers.each do |f| %>
+      <%= link_to edit_brindos_customer_path(f) do %>
         <div class="row customer">
           <div class="col-2">
             <% if f.genre.present? %>
@@ -76,10 +76,4 @@
     <% end %>
     <br>
   </div>
-
-  <h2> Import customers</h2>
-  <%= form_tag import_porto_customers_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "import" %>
-  <% end %>
 <% end %>

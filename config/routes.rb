@@ -1,4 +1,12 @@
  Rails.application.routes.draw do
+  root to: 'pages#home'
+  get 'brindos_lac_et_chateau', to:'pages#brindos_lac_et_chateau'
+  get 'cocorico', to: 'pages#cocorico'
+  get 'la_plage_blanche', to:'pages#la_plage_blanche'
+  get 'le_chateau_de_sacy', to:'pages#le_chateau_de_sacy'
+  get 'le_domaine_de_raba', to:'pages#le_domaine_de_raba'
+  get 'le_grand_hotel', to:'pages#le_grand_hotel'
+  get 'le_manege', to:'pages#le_manege'
   resources :mail_orders
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -6,7 +14,7 @@
     collection {post :import}
   end
   devise_for :users
-  root to: 'pages#home'
+
   resources :customers, only: [:index, :new, :create] do
     collection {post :import }
   end

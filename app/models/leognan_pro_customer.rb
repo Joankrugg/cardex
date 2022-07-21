@@ -1,0 +1,2 @@
+class LeognanProCustomer < ApplicationRecord
+end

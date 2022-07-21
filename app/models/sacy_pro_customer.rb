@@ -1,0 +1,2 @@
+class SacyProCustomer < ApplicationRecord
+end

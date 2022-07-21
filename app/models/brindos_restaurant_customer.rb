@@ -1,0 +1,2 @@
+class BrindosRestaurantCustomer < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class BrindosProCustomer < ApplicationRecord
+end

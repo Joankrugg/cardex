@@ -1,0 +1,2 @@
+class TheouleSpaCustomer < ApplicationRecord
+end

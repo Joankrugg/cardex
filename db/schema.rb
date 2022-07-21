@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_18_115546) do
+ActiveRecord::Schema.define(version: 2022_07_21_090200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,74 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.string "booking"
     t.string "address"
     t.boolean "unsubscribe", default: false
+  end
+
+  create_table "brindos_pro_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "brindos_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "brindos_room_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "brindos_spa_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "companies", force: :cascade do |t|
@@ -151,6 +219,40 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.boolean "unsubscribe", default: false
   end
 
+  create_table "leognan_pro_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "leognan_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "mail_addresses", force: :cascade do |t|
     t.string "email"
     t.string "status"
@@ -193,6 +295,40 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
+  end
+
+  create_table "megeve_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "megeve_room_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "millesime_customers", force: :cascade do |t|
@@ -245,6 +381,40 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.boolean "unsubscribe", default: false
   end
 
+  create_table "porto_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "porto_room_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "raba_customers", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -258,6 +428,69 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.string "birth"
     t.string "segment"
     t.boolean "unsubscribe", default: false
+  end
+
+  create_table "raba_pro_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "raba_pros", force: :cascade do |t|
+    t.string "genre"
+    t.string "firm"
+    t.string "zipcode"
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "raba_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "raba_room_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "raba_spa_customers", force: :cascade do |t|
@@ -291,6 +524,57 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.boolean "unsubscribe", default: false
   end
 
+  create_table "sacy_pro_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sacy_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sacy_room_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sacy_spa_customers", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -307,6 +591,23 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.boolean "unsubscribe", default: false
   end
 
+  create_table "theoule_beach_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "theoule_customers", force: :cascade do |t|
     t.string "genre"
     t.string "name"
@@ -320,6 +621,40 @@ ActiveRecord::Schema.define(version: 2022_07_18_115546) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
+  end
+
+  create_table "theoule_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "theoule_spa_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "birth"
+    t.string "segment"
+    t.string "home"
+    t.boolean "unsubscribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,2 @@
+class PortoRoomCustomer < ApplicationRecord
+end

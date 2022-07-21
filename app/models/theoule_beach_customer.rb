@@ -1,0 +1,2 @@
+class TheouleBeachCustomer < ApplicationRecord
+end

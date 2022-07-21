@@ -1,0 +1,2 @@
+class RabaRoomCustomer < ApplicationRecord
+end

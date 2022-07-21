@@ -1,0 +1,2 @@
+class MegeveRestaurantCustomer < ApplicationRecord
+end
