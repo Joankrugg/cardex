@@ -69,6 +69,6 @@ class RabaCustomersController < ApplicationController
   end
 
   def raba_customer_params
-    params.require(:raba_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe, :phone, :segment)
+    params.require(:raba_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe, :segment)
   end
 end
