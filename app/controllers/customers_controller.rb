@@ -1,9 +1,17 @@
 class CustomersController < ApplicationController
   def index
-    @customers = Customer.all
-    respond_to do |format|
-      format.html
-      format.csv { send_data @customers.to_csv(['name', 'mail'])}
+    if params[:search].present?
+      @customers = Customer.customer_search(params[:search])
+      respond_to do |format|
+        format.html
+        format.csv { send_data @customers.to_csv(['name', 'mail'])}
+      end
+    else
+      @customers = Customer.all
+      respond_to do |format|
+        format.html
+        format.csv { send_data @customers.to_csv(['name', 'mail'])}
+      end
     end
   end
 
@@ -23,7 +31,6 @@ class CustomersController < ApplicationController
 
   def import
     Customer.import(params[:file])
-    redirect_to root_url, notice: 'customers imported.'
   end
 
   private

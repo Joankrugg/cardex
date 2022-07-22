@@ -15,7 +15,7 @@
   end
   devise_for :users
 
-  resources :customers, only: [:index, :new, :create] do
+  resources :customers do
     collection {post :import }
   end
   resources :millesime_customers do
