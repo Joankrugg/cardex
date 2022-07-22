@@ -1,5 +1,5 @@
 class MillesimeCustomer < ApplicationRecord
-  validates :mail, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
+  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   include PgSearch::Model
   pg_search_scope :millesime_search,
     against: [ :city, :country, :name, :genre ],
@@ -16,7 +16,7 @@ class MillesimeCustomer < ApplicationRecord
   end
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      MillesimeCustomer.where(mail: row[7]).first_or_create do |c|
+      MillesimeCustomer.where(email: row[7]).first_or_create do |c|
         c.genre = row[0]
         c.name = row[1]
         c.surname = row[2]
