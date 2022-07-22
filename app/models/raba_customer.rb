@@ -1,7 +1,5 @@
 class RabaCustomer < ApplicationRecord
-  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, presence: true
-  validates :email, uniqueness: true
-  validates :name, presence: true
+  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   include PgSearch::Model
   pg_search_scope :raba_search,
     against: [ :city, :country, :name, :genre ],
