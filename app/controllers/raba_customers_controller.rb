@@ -46,6 +46,7 @@ class RabaCustomersController < ApplicationController
   def import
     RabaCustomer.import(params[:file])
   end
+
   def export
     if params[:search].present?
       @mimi_customers = RabaCustomer.raba_search(params[:search])
@@ -68,6 +69,6 @@ class RabaCustomersController < ApplicationController
   end
 
   def raba_customer_params
-    params.require(:raba_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe, :phone, :home, :address, :segment)
+    params.require(:raba_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe, :phone, :segment)
   end
 end

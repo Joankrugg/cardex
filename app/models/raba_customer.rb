@@ -2,7 +2,7 @@ class RabaCustomer < ApplicationRecord
   validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   include PgSearch::Model
   pg_search_scope :raba_search,
-    against: [ :city, :country, :name, :genre ],
+    against: [ :city, :country, :name, :genre, :email ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
@@ -22,14 +22,12 @@ class RabaCustomer < ApplicationRecord
         c.genre = row[0]
         c.name = row[1]
         c.surname = row[2]
-        c.address = row[3]
-        c.city = row[4]
-        c.zipcode = row[5]
-        c.country = row[6]
-        c.phone = row[8]
-        c.birth = row[9]
-        c.home = row[10]
-        c.segment = row[11]
+        c.city = row[3]
+        c.zipcode = row[4]
+        c.country = row[5]
+        c.phone = row[6]
+        c.birth = row[8]
+        c.segment = row[9]
       end
     end
   end

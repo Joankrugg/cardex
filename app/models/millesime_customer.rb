@@ -2,7 +2,7 @@ class MillesimeCustomer < ApplicationRecord
   validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   include PgSearch::Model
   pg_search_scope :millesime_search,
-    against: [ :city, :country, :name, :genre ],
+    against: [ :city, :country, :name, :genre, :email ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
