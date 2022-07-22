@@ -32,8 +32,8 @@ class MillesimeCustomersController < ApplicationController
 
   def import
     MillesimeCustomer.import(params[:file])
-    redirect_to root_url, notice: 'millesime_customers imported.'
   end
+
   def export
     if params[:search].present?
       @mimi_customers = MillesimeCustomer.millesime_search(params[:search])
