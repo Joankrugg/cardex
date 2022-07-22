@@ -16,7 +16,7 @@ class MillesimeCustomer < ApplicationRecord
   end
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      Customer.where(mail: row[7]).first_or_create do |c|
+      MillesimeCustomer.where(mail: row[7]).first_or_create do |c|
         c.genre = row[0]
         c.name = row[1]
         c.surname = row[2]
