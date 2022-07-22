@@ -45,7 +45,6 @@ class RabaCustomersController < ApplicationController
 
   def import
     RabaCustomer.import(params[:file])
-    redirect_to root_url, notice: 'raba_customers imported.'
   end
   def export
     if params[:search].present?
