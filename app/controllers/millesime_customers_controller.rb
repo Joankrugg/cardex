@@ -52,7 +52,7 @@ class MillesimeCustomersController < ApplicationController
   private
 
   def millesime_customer_params
-    params.require(:millesime_customer).permit(:name, :mail)
+    params.require(:millesime_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe, :phone, :home, :address, :segment)
   end
 end
 
