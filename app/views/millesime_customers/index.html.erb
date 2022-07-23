@@ -1,5 +1,26 @@
+<div class="zone"></div>
 <% if user_signed_in? && current_user.email.include?('millesime-collection.com') %>
-  <div class="container bloc">
+  <div class="container">
+    <div class="search-form">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 mx-auto">
+          <%= form_tag(millesime_customers_path, method: :get) do %>
+            <div class="search-form-control form-group">
+              <i class="fas fa-search search-img"></i>
+              <%= text_field_tag :search, nil, class: "form-control string required", autocomplete: 'off'%>
+              <div type="submit" class="validate">
+                Allons-y
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8 mx-auto">
+        <%= @millesime_customers.count %> résultats
+      </div>
+    </div>
     <div class="row">
       <%= link_to 'new millesime customer', new_millesime_customer_path %>
     </div>
@@ -10,22 +31,8 @@
     <div class="row">
       <%= link_to 'CSV FILTRE', millesime_customers_path(format: "csv") %>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 mx-auto">
-        <%= form_tag(millesime_customers_path, method: :get) do %>
-          <div class="search-form-control form-group">
-            <i class="fas fa-search search-img"></i>
-            <%= text_field_tag :search, nil, class: "form-control string required", autocomplete: 'off'%>
-            <div type="submit" class="validate">
-              Allons-y
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <%= @millesime_customers.count %> résultats
-    </div>
+
+
     <div class="row">
       <div class="col-2">
         <h3>Titre</h3>

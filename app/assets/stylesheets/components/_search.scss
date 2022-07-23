@@ -1,4 +1,13 @@
+.search-form{
+  width: 100%;
+  background: #f4f4f4;
+  position: fixed;
+}
+
 .search-form-control{
+  display: block;
+  width: 420px;
+  margin: auto;
   position: relative;
   border-radius: 4px;
 }
@@ -29,4 +38,19 @@
 
 .validate:hover{
   background-image: linear-gradient(white, white);
+}
+
+.result-block{
+  margin-top: 38px;
+  width: 100%;
+  background: #f4f4f4;
+  position: fixed;
+}
+
+.results{
+  display: block;
+  width: 80px;
+  margin: auto;
+  position: relative;
+  border-radius: 4px;
 }
