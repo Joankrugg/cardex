@@ -37,7 +37,6 @@ class PortoCustomersController < ApplicationController
 
   def update
     if @porto_customer.update(porto_customer_params)
-      redirect_to porto_customers_path
     else
       render :edit
     end
@@ -47,6 +46,7 @@ class PortoCustomersController < ApplicationController
     PortoCustomer.import(params[:file])
     redirect_to root_url, notice: 'porto_customers imported.'
   end
+
   def export
     if params[:search].present?
       @mimi_customers = PortoCustomer.porto_search(params[:search])
@@ -62,11 +62,14 @@ class PortoCustomersController < ApplicationController
       end
     end
   end
+
   private
+
   def set_porto_customer
     @porto_customer = PortoCustomer.find(params[:id])
   end
+
   def porto_customer_params
-    params.require(:porto_customer).permit(:name, :mail)
+    params.require(:porto_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe)
   end
 end

@@ -1,5 +1,6 @@
 require 'csv'
 class MillesimeCustomersController < ApplicationController
+  before_action :set_millesime_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @millesime_customers = MillesimeCustomer.millesime_search(params[:search])
@@ -30,6 +31,17 @@ class MillesimeCustomersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @megeve_customer.update(megeve_customer_params)
+    else
+      render :edit
+    end
+  end
+
   def import
     MillesimeCustomer.import(params[:file])
   end
@@ -49,7 +61,12 @@ class MillesimeCustomersController < ApplicationController
       end
     end
   end
+
   private
+
+  def set_millesime_customer
+    @millesime_customer = MillesimeCustomer.find(params[:id])
+  end
 
   def millesime_customer_params
     params.require(:millesime_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe, :phone, :home, :address, :segment)

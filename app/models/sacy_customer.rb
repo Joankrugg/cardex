@@ -16,4 +16,18 @@ class SacyCustomer < ApplicationRecord
       end
     end
   end
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      SacyCustomer.where(email: row[6]).first_or_create do |c|
+        c.genre = row[0]
+        c.name = row[1]
+        c.surname = row[2]
+        c.zipcode = row[3]
+        c.city = row[4]
+        c.country = row[5]
+        c.birth = row[7]
+        c.segment = row[8]
+      end
+    end
+  end
 end

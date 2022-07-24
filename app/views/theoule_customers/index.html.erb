@@ -1,85 +1,113 @@
+<div class="zone"></div>
 <% if user_signed_in? && current_user.email.include?('millesime-collection.com') %>
-  <div class="container bloc">
-    <div class="row">
-      <%= link_to 'new theoule customer', new_theoule_customer_path %>
+  <div class="search-form">
+    <%= form_tag(theoule_customers_path, method: :get) do %>
+      <div class="search-form-control form-group">
+        <i class="fas fa-search search-img"></i>
+        <%= text_field_tag :search, nil, class: "form-control string required", autocomplete: 'off'%>
+        <div type="submit" class="validate">
+          Allons-y
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="result-block">
+    <div class="results">
+      <%= @theoule_customers.count %> résultats
     </div>
-      Download
-    <div class="row">
-      <%= link_to 'CSV', theoule_customers_path(format: "csv") %>
+  </div>
+  <div class="actions">
+    <div class="container">
+      <div class="row action-buttons">
+        <div class="col-4 mx-auto">
+          <%= link_to "Créer un client du Soleil d'or", new_theoule_customer_path, class: 'btn btn-validate' %>
+        </div>
+        <div class="col-4 mx-auto">
+          <form enctype="multipart/form-data" action="/theoule_customers/import" accept-charset="UTF-8" method="post" class='import'><input type="hidden" name="authenticity_token" value="SzUvUwGk4iw8rAUxiidkvP0sINcbIdCDvYGQuTzr1nUfuadjaPkE8h9heKLeq7fNngNA/RmF5w3EyupKmEiylg==">
+            <label for="file" class="custom-file-upload">
+              'CSV'
+            </label>
+            <input type="file" name="file" id="file">
+            <input type="submit" name="commit" value="importer" class="btn btn-validate" data-disable-with="importer">
+          </form>
+        </div>
+        <div class="col-4 mx-auto">
+          <%= link_to 'Télécharger un CSV', theoule_customers_path(format: "csv"), class: 'btn btn-validate' %>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <%= link_to 'CSV FILTRE', theoule_customers_path(format: "csv") %>
+  </div>
+  <div class="column-names">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-2">
+          <h3>Titre</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+          <h3>Nom</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+          <h3>Prénom</h3>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+          <h3>Ville</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+          <h3>Code postal</h3>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+          <h3>Pays</h3>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+          <h3>Email</h3>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 mx-auto">
-        <%= form_tag(theoule_customers_path, method: :get) do %>
-          <div class="search-form-control form-group">
-            <i class="fas fa-search search-img"></i>
-            <%= text_field_tag :search, nil, class: "form-control string required", autocomplete: 'off'%>
-            <div type="submit" class="validate">
-              Allons-y
+  </div>
+  <div class="customers">
+    <div class="container">
+      <% @theoule_customers.each do |f| %>
+        <%= link_to edit_theoule_customer_path(f) do %>
+          <div class="row customer">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-2">
+              <% if f.genre.present? %>
+                <%= f.genre.downcase.capitalize %>
+              <% end %>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+              <% if f.name.present? %>
+                <%= f.name.upcase %>
+              <% end %>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+              <% if f.surname.present? %>
+                <%= f.surname.upcase %>
+              <% end %>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+              <% if f.city.present? %>
+                <%= f.city.downcase.capitalize  %>
+              <% end %>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+              <% if f.zipcode.present? %>
+                <%= f.zipcode  %>
+              <% end %>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+              <% if f.country.present? %>
+                <%= f.country.downcase.capitalize  %>
+              <% end %>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <% if f.email.present? %>
+                <%= f.email %>
+              <% end %>
             </div>
           </div>
         <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <%= @theoule_customers.count %> résultats
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <h3>Titre</h3>
-      </div>
-      <div class="col-2">
-        <h3>Nom</h3>
-      </div>
-      <div class="col-2">
-        <h3>Ville</h3>
-      </div>
-      <div class="col-2">
-        <h3>Pays</h3>
-      </div>
-      <div class="col-2">
-        <h3>Email</h3>
-      </div>
-    </div>
-    <% @theoule_customers.each do |f| %>
-      <%= link_to edit_theoule_customer_path(f) do %>
-        <div class="row customer">
-          <div class="col-2">
-            <% if f.genre.present? %>
-              <%= f.genre.downcase.capitalize %>
-            <% end %>
-          </div>
-          <div class="col-2">
-            <% if f.name.present? %>
-              <%= f.name.upcase %>
-            <% end %>
-          </div>
-          <div class="col-2">
-            <% if f.city.present? %>
-              <%= f.city.downcase.capitalize  %>
-            <% end %>
-          </div>
-          <div class="col-2">
-            <% if f.country.present? %>
-              <%= f.country.downcase.capitalize  %>
-            <% end %>
-          </div>
-          <div class="col-2">
-            <% if f.email.present? %>
-              <%= f.email %>
-            <% end %>
-          </div>
-        </div>
       <% end %>
-    <% end %>
-    <br>
+    </div>
   </div>
-
-  <h2> Import customers</h2>
-  <%= form_tag import_theoule_customers_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "import" %>
-  <% end %>
+  <br>
 <% end %>

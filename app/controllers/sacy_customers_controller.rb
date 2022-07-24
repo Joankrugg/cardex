@@ -44,7 +44,6 @@ class SacyCustomersController < ApplicationController
 
   def import
     SacyCustomer.import(params[:file])
-    redirect_to root_url, notice: 'sacy_customers imported.'
   end
   def export
     if params[:search].present?
@@ -66,6 +65,6 @@ class SacyCustomersController < ApplicationController
     @sacy_customer = SacyCustomer.find(params[:id])
   end
   def sacy_customer_params
-    params.require(:sacy_customer).permit(:name, :mail)
+    params.require(:sacy_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe)
   end
 end

@@ -30,6 +30,7 @@ class TheouleCustomersController < ApplicationController
       render :new
     end
   end
+
   def edit
 
   end
@@ -44,8 +45,8 @@ class TheouleCustomersController < ApplicationController
 
   def import
     TheouleCustomer.import(params[:file])
-    redirect_to root_url, notice: 'theoule_customers imported.'
   end
+
   def export
     if params[:search].present?
       @mimi_customers = TheouleCustomer.theoule_search(params[:search])
@@ -61,11 +62,14 @@ class TheouleCustomersController < ApplicationController
       end
     end
   end
+
   private
+
   def set_theoule_customer
     @theoule_customer = TheouleCustomer.find(params[:id])
   end
+
   def theoule_customer_params
-    params.require(:theoule_customer).permit(:name, :mail)
+    params.require(:theoule_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe)
   end
 end
