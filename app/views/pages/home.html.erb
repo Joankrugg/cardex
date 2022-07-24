@@ -15,6 +15,12 @@
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#brindos">
     Maison de Brindos
   </div>
+  <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#leognan">
+    Maison de Léognan
+  </div>
+  <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#megeve">
+    Maison de Megève
+  </div>
   <div class="row">
     <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Envoyer un message</div></a>
   </div>
@@ -45,6 +51,63 @@
           </div>
           <div class="row">
             <%= link_to 'Brindos professionnels', brindos_pro_customers_path, class: 'cardex-segment'  %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="leognan" tabindex="-1" aria-labelledby="cardex-leognan" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-leognan">Cardex de la Maison leognan Lac et Château</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <%= link_to 'Maison leognan', leognan_customers_path, class: 'cardex-segment' %>
+          </div>
+          <div class="row">
+            <%= link_to 'Restaurant leognan', leognan_restaurant_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to 'Clients leognan pros', leognan_pro_customers_path, class: 'cardex-segment'  %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="megeve" tabindex="-1" aria-labelledby="cardex-megeve" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-megeve">Cardex du Grand Hôtel Soleil d'Or</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <%= link_to "Maison du Soleil d'Or", megeve_customers_path, class: 'cardex-segment' %>
+          </div>
+          <div class="row">
+            <%= link_to "Hébergement du Soleil d'Or", megeve_room_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Restaurant du Soleil d'Or", megeve_restaurant_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Clients du spa du Soleil d'Or", ghso_spa_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>

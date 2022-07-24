@@ -34,10 +34,6 @@
     collection {post :import}
     collection {get :export}
   end
-  resources :leognan_customers do
-    collection {post :import}
-    collection {get :export}
-  end
   resources :brindos_customers do
     collection {post :import}
     collection {get :export}
@@ -58,11 +54,35 @@
     collection {post :import}
     collection {get :export}
   end
-  resources :sacy_customers do
+  resources :leognan_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :leognan_restaurant_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :leognan_pro_customers do
     collection {post :import}
     collection {get :export}
   end
   resources :megeve_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :megeve_restaurant_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :megeve_room_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :ghso_spa_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :sacy_customers do
     collection {post :import}
     collection {get :export}
   end
