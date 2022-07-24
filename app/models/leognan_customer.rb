@@ -1,7 +1,5 @@
 class LeognanCustomer < ApplicationRecord
-  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, presence: true
-  validates :email, uniqueness: true
-  validates :name, presence: true
+  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   include PgSearch::Model
   pg_search_scope :leognan_search,
     against: [ :city, :country, :name, :genre ],
@@ -13,6 +11,20 @@ class LeognanCustomer < ApplicationRecord
       csv << fields
       all.each do |customer|
         csv << customer.attributes.values_at(*fields)
+      end
+    end
+  end
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      LeognanCustomer.where(email: row[6]).first_or_create do |c|
+        c.genre = row[0]
+        c.name = row[1]
+        c.surname = row[2]
+        c.city = row[3]
+        c.zipcode = row[4]
+        c.country = row[5]
+        c.birth = row[7]
+        c.segment = row[8]
       end
     end
   end

@@ -1,5 +1,6 @@
 require 'csv'
 class AnglophoneCustomersController < ApplicationController
+  before_action :set_anglophone_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
       @anglophone_customers = AnglophoneCustomer.anglophone_search(params[:search])
@@ -30,10 +31,22 @@ class AnglophoneCustomersController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
+  def update
+    if @anglophone_customer.update(anglophone_customer_params)
+      redirect_to anglophone_customers_path
+    else
+      render :edit
+    end
+  end
+
   def import
     AnglophoneCustomer.import(params[:file])
-    redirect_to root_url, notice: 'anglophone_customers imported.'
   end
+
   def export
     if params[:search].present?
       @mimi_customers = AnglophoneCustomer.anglophone_search(params[:search])
@@ -49,9 +62,14 @@ class AnglophoneCustomersController < ApplicationController
       end
     end
   end
+
   private
 
+  def set_anglophone_customer
+    @anglophone_customer = AnglophoneCustomer.find(params[:id])
+  end
+
   def anglophone_customer_params
-    params.require(:anglophone_customer).permit(:name, :mail)
+    params.require(:anglophone_customer).permit(:genre, :name, :surname, :zipcode, :city, :country, :email, :birth, :segment, :phone, :home, :unsubscribe)
   end
 end

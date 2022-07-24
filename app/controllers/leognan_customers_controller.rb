@@ -30,6 +30,7 @@ class LeognanCustomersController < ApplicationController
       render :new
     end
   end
+
   def edit
 
   end
@@ -41,10 +42,11 @@ class LeognanCustomersController < ApplicationController
       render :edit
     end
   end
+
   def import
     LeognanCustomer.import(params[:file])
-    redirect_to root_url, notice: 'leognan_customers imported.'
   end
+
   def export
     if params[:search].present?
       @mimi_customers = LeognanCustomer.leognan_search(params[:search])
@@ -60,11 +62,15 @@ class LeognanCustomersController < ApplicationController
       end
     end
   end
+
   private
+
   def set_leognan_customer
     @leognan_customer = LeognanCustomer.find(params[:id])
   end
+
   def leognan_customer_params
-    params.require(:leognan_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe)
+    params.require(:leognan_customer).permit(:genre, :name, :surname, :zipcode, :city, :country, :email, :birth ,:subscribe, :unsubscribe)
   end
 end
+

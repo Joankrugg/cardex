@@ -46,7 +46,6 @@ class BrindosCustomersController < ApplicationController
 
   def import
     BrindosCustomer.import(params[:file])
-    redirect_to root_url, notice: 'brindos_customers imported.'
   end
 
   def export
