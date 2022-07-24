@@ -1,0 +1,43 @@
+<div class="zone"></div>
+<div class="container form-for-new">
+  <%= simple_form_for @brindos_restaurant_customer do |f| %>
+    <div class="row">
+      <div class="col-lg-8 col-md-9 col-sm-10 col-12 mx-auto form">
+        <h3>Client brindos restaurant</h3>
+        <div class="row">
+          <div class="col-2">
+            <%= f.input :genre %>
+          </div>
+          <div class="col-5">
+            <%= f.input :name, required: false  %>
+          </div>
+          <div class="col-5">
+            <%= f.input :surname  %>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.input :email, required: false   %>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <%= f.input :zipcode  %>
+          </div>
+          <div class="col-8">
+            <%= f.input :city  %>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.input :birth  %>
+        </div>
+        <div class="row">
+        <%= f.input :unsubscribe, as: :radio_buttons %>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <%= f.button :submit, 'Valider', class: 'btn btn-validate' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

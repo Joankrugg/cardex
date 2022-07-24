@@ -42,6 +42,22 @@
     collection {post :import}
     collection {get :export}
   end
+  resources :brindos_pro_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :brindos_restaurant_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :brindos_room_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :brindos_spa_customers do
+    collection {post :import}
+    collection {get :export}
+  end
   resources :sacy_customers do
     collection {post :import}
     collection {get :export}

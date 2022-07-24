@@ -33,4 +33,21 @@
   margin-top: 180px;
 }
 
+.modal-title{
+  text-align: center;
+}
 
+.cardex-segment{
+  border: 1px, solid, black;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  background: white;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.cardex-segment:hover{
+  background-image: linear-gradient(#b99848, #e1ca95);
+  color: white;
+}

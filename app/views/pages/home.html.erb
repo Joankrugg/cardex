@@ -12,60 +12,8 @@
       <% end %>
     <% end %>
   </div>
-  <div class="row">
-    <%= link_to millesime_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Millésime</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to francophone_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Millésime FR</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to anglophone_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Millésime EN</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to raba_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Le Domaine de Raba</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to leognan_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Le Manège</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to sacy_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Le Château de Sacy</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to megeve_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Le Soleil d'Or</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to brindos_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Brindos Lac et Chateau</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to theoule_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">La Plage Blanche</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to porto_customers_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Le Cocorico</div>
-    <% end %>
-  </div>
-  <div class="row">
-    <%= link_to rails_admin_path do %>
-      <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Admin</div>
-    <% end %>
+  <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#brindos">
+    Maison de Brindos
   </div>
   <div class="row">
     <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Envoyer un message</div></a>
@@ -74,6 +22,37 @@
 
 
 
-
+<div class="modal fade" id="brindos" tabindex="-1" aria-labelledby="cardex-brindos" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-brindos">Cardex de la Maison Brindos Lac et Château</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <%= link_to 'Maison Brindos', brindos_customers_path, class: 'cardex-segment' %>
+          </div>
+          <div class="row">
+            <%= link_to 'Hébergement Brindos', brindos_room_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to 'Restaurant Brindos', brindos_restaurant_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to 'Spa Brindos', brindos_spa_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to 'Brindos professionnels', brindos_pro_customers_path, class: 'cardex-segment'  %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
