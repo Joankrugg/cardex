@@ -17,7 +17,7 @@ class BrindosRestaurantCustomer < ApplicationRecord
   end
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      BrindosProCustomer.where(email: row[6]).first_or_create do |c|
+      BrindosRestaurantCustomer.where(email: row[6]).first_or_create do |c|
         c.genre = row[0]
         c.name = row[1]
         c.surname = row[2]

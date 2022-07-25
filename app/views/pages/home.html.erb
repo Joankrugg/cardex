@@ -13,53 +13,54 @@
     <% end %>
   </div>
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#brindos">
-    Maison de Brindos
+    Brindos Lac et Château
   </div>
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#leognan">
-    Maison de Léognan
+    Le Manège
   </div>
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#megeve">
-    Maison de Megève
+    Le Soleil d'Or
   </div>
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#raba">
-    Maison de Raba
+    Le Domaine de Raba
   </div>
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#sacy">
-    Maison de Sacy
+    Le Château deSacy
   </div>
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#theoule">
-    Maison de Théoule
+    La Plage Blanche
+  </div>
+  <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#porto">
+    Cocorico
   </div>
   <div class="row">
     <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Envoyer un message</div></a>
   </div>
 </div>
 
-
-
 <div class="modal fade" id="brindos" tabindex="-1" aria-labelledby="cardex-brindos" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="cardex-brindos">Cardex de la Maison Brindos Lac et Château</h5>
+        <h5 class="modal-title" id="cardex-brindos">Cardex de Brindos Lac et Château</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <%= link_to 'Maison Brindos', brindos_customers_path, class: 'cardex-segment' %>
+            <%= link_to 'Brindos Lac et Château', brindos_customers_path, class: 'cardex-segment' %>
           </div>
           <div class="row">
-            <%= link_to 'Hébergement Brindos', brindos_room_customers_path, class: 'cardex-segment'  %>
+            <%= link_to 'Hébergement à Brindos', brindos_room_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to 'Restaurant Brindos', brindos_restaurant_customers_path, class: 'cardex-segment'  %>
+            <%= link_to 'Restaurant de Brindos', brindos_restaurant_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to 'Spa Brindos', brindos_spa_customers_path, class: 'cardex-segment'  %>
+            <%= link_to 'Spa de Brindos', brindos_spa_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to 'Brindos professionnels', brindos_pro_customers_path, class: 'cardex-segment'  %>
+            <%= link_to 'Clients porto_customers_path de Brindos', brindos_pro_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>
@@ -74,19 +75,19 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="cardex-leognan">Cardex de la Maison leognan Lac et Château</h5>
+        <h5 class="modal-title" id="cardex-leognan">Cardex du Manège</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <%= link_to 'Maison leognan', leognan_customers_path, class: 'cardex-segment' %>
+            <%= link_to 'Le Manège', leognan_customers_path, class: 'cardex-segment' %>
           </div>
           <div class="row">
-            <%= link_to 'Restaurant leognan', leognan_restaurant_customers_path, class: 'cardex-segment'  %>
+            <%= link_to 'Le Restaurant du Manège', leognan_restaurant_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to 'Clients leognan pros', leognan_pro_customers_path, class: 'cardex-segment'  %>
+            <%= link_to 'Clients pros du Manège', leognan_pro_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>
@@ -101,22 +102,22 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="cardex-megeve">Cardex du Grand Hôtel Soleil d'Or</h5>
+        <h5 class="modal-title" id="cardex-megeve">Cardex du Grand Hôtel du Soleil d'Or</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <%= link_to "Maison du Soleil d'Or", megeve_customers_path, class: 'cardex-segment' %>
+            <%= link_to "Le Grand Hôtel du Soleil d'Or", megeve_customers_path, class: 'cardex-segment' %>
           </div>
           <div class="row">
-            <%= link_to "Hébergement du Soleil d'Or", megeve_room_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Hébergement au Soleil d'Or", megeve_room_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
             <%= link_to "Restaurant du Soleil d'Or", megeve_restaurant_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Clients du spa du Soleil d'Or", ghso_spa_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Spa du Soleil d'Or", ghso_spa_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>
@@ -131,25 +132,25 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="cardex-raba">Cardex du Grand Hôtel Soleil d'Or</h5>
+        <h5 class="modal-title" id="cardex-raba">Cardex du Domaine de Raba</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <%= link_to "Maison de Rabar", raba_customers_path, class: 'cardex-segment' %>
+            <%= link_to "Le Domaine de Raba", raba_customers_path, class: 'cardex-segment' %>
           </div>
           <div class="row">
-            <%= link_to "Hébergement de Raba", raba_room_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Hébergement au Domaine de Raba", raba_room_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Restaurant de Raba", raba_restaurant_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Restaurant du Domaine de Raba", raba_restaurant_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Clients du spa de raba", raba_spa_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Spa du Domaine de raba", raba_spa_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Clients pro de Raba", raba_pro_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Clients pros du Domaine de Raba", raba_pro_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>
@@ -170,19 +171,19 @@
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <%= link_to "Maison de Sacy", sacy_customers_path, class: 'cardex-segment' %>
+            <%= link_to "Le Château de Sacy", sacy_customers_path, class: 'cardex-segment' %>
           </div>
           <div class="row">
-            <%= link_to "Hébergement de sacy", sacy_room_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Hébergement au Château sacy", sacy_room_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Restaurant de sacy", sacy_restaurant_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Restaurant du Château sacy", sacy_restaurant_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Clients du spa de sacy", sacy_spa_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Spa du Château sacy", sacy_spa_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Clients pro de sacy", sacy_pro_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Clients pros de Sacy", sacy_pro_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>
@@ -197,22 +198,49 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="cardex-theoule">Cardex du Château de theoule</h5>
+        <h5 class="modal-title" id="cardex-theoule">Cardex de la Plage Blanche</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <%= link_to "Maison de theoule", theoule_customers_path, class: 'cardex-segment' %>
+            <%= link_to "La Plage Blanche", theoule_customers_path, class: 'cardex-segment' %>
           </div>
           <div class="row">
-            <%= link_to "Transats de theoule", theoule_beach_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Transats de la Plage Blanche", theoule_beach_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Restaurant de theoule", theoule_restaurant_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Restaurant de la Plage Blanche", theoule_restaurant_customers_path, class: 'cardex-segment'  %>
           </div>
           <div class="row">
-            <%= link_to "Clients du spa de theoule", theoule_spa_customers_path, class: 'cardex-segment'  %>
+            <%= link_to "Spa de la Plage Blanche", theoule_spa_customers_path, class: 'cardex-segment'  %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="porto" tabindex="-1" aria-labelledby="cardex-porto" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-porto">Cardex du Cocorico</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <%= link_to "Cocorico", porto_customers_path, class: 'cardex-segment' %>
+          </div>
+          <div class="row">
+            <%= link_to "Restaurant du Cocorico", porto_restaurant_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Hébergement au Cocorico", porto_room_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>

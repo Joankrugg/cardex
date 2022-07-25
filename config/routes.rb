@@ -122,6 +122,14 @@
     collection {post :import}
     collection {get :export}
   end
+  resources :porto_room_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :porto_restaurant_customers do
+    collection {post :import}
+    collection {get :export}
+  end
   resources :theoule_customers do
     collection {post :import}
     collection {get :export}

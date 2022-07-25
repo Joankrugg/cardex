@@ -37,6 +37,7 @@ class PortoCustomersController < ApplicationController
 
   def update
     if @porto_customer.update(porto_customer_params)
+      redirect_to porto_customers_path
     else
       render :edit
     end

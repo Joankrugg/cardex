@@ -2,7 +2,7 @@ class TheouleBeachCustomer < ApplicationRecord
   validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   validates :email, uniqueness: true
   include PgSearch::Model
-  pg_search_scope :theoule_Beach_search,
+  pg_search_scope :theoule_beach_search,
     against: [ :city, :country, :name, :genre ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!

@@ -1,7 +1,7 @@
 class RabaSpaCustomer < ApplicationRecord
   validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   include PgSearch::Model
-  pg_search_scope :raba_search,
+  pg_search_scope :raba_spa_search,
     against: [ :city, :country, :name, :genre, :email, :unsubscribe ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
@@ -17,7 +17,7 @@ class RabaSpaCustomer < ApplicationRecord
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      RabaCustomer.where(email: row[6]).first_or_create do |c|
+      RabaSpaCustomer.where(email: row[6]).first_or_create do |c|
         c.genre = row[0]
         c.name = row[1]
         c.surname = row[2]
