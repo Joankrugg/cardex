@@ -102,6 +102,22 @@
     collection {post :import}
     collection {get :export}
   end
+  resources :sacy_room_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :sacy_restaurant_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :sacy_spa_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :sacy_pro_customers do
+    collection {post :import}
+    collection {get :export}
+  end
   resources :porto_customers do
     collection {post :import}
     collection {get :export}
