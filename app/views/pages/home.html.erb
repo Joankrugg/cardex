@@ -21,6 +21,9 @@
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#megeve">
     Maison de Megève
   </div>
+  <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#raba">
+    Maison de Raba
+  </div>
   <div class="row">
     <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Envoyer un message</div></a>
   </div>
@@ -118,4 +121,36 @@
   </div>
 </div>
 
+<div class="modal fade" id="raba" tabindex="-1" aria-labelledby="cardex-raba" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-raba">Cardex du Grand Hôtel Soleil d'Or</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <%= link_to "Maison de Rabar", raba_customers_path, class: 'cardex-segment' %>
+          </div>
+          <div class="row">
+            <%= link_to "Hébergement de Raba", raba_room_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Restaurant de Raba", raba_restaurant_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Clients du spa de raba", raba_spa_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Clients pro de Raba", raba_pro_customers_path, class: 'cardex-segment'  %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
 

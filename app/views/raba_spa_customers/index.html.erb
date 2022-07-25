@@ -1,0 +1,117 @@
+<div class="zone"></div>
+<% if user_signed_in? && current_user.email.include?('millesime-collection.com') %>
+  <div class="search-form">
+    <%= form_tag(raba_spa_customers_path, method: :get) do %>
+      <div class="search-form-control form-group">
+        <i class="fas fa-search search-img"></i>
+        <%= text_field_tag :search, nil, class: "form-control string required", autocomplete: 'off'%>
+        <div type="submit" class="validate">
+          Allons-y
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="result-block">
+    <div class="results">
+      <%= @raba_spa_customers.count %> résultats
+    </div>
+  </div>
+  <div class="actions">
+    <div class="container">
+      <div class="row action-buttons">
+        <div class="col-4 mx-auto">
+          <%= link_to "Créer un client du Soleil d'or", new_raba_spa_customer_path, class: 'btn btn-validate' %>
+        </div>
+        <div class="col-4 mx-auto">
+          <form enctype="multipart/form-data" action="/raba_spa_customers/import" accept-charset="UTF-8" method="post" class='import'><input type="hidden" name="authenticity_token" value="SzUvUwGk4iw8rAUxiidkvP0sINcbIdCDvYGQuTzr1nUfuadjaPkE8h9heKLeq7fNngNA/RmF5w3EyupKmEiylg==">
+            <label for="file" class="custom-file-upload">
+              'CSV'
+            </label>
+            <input type="file" name="file" id="file">
+            <input type="submit" name="commit" value="importer" class="btn btn-validate" data-disable-with="importer">
+          </form>
+        </div>
+        <div class="col-4 mx-auto">
+          <%= link_to 'Télécharger un CSV', raba_spa_customers_path(format: "csv"), class: 'btn btn-validate' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column-names">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-2">
+          <h3>Titre</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+          <h3>Nom</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+          <h3>Prénom</h3>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+          <h3>Ville</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+          <h3>Code postal</h3>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+          <h3>Pays</h3>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+          <h3>Email</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="customers">
+    <div class="container">
+      <% @raba_spa_customers.each do |f| %>
+        <%= link_to edit_raba_spa_customer_path(f) do %>
+          <div class="row customer">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-2">
+              <% if f.genre.present? %>
+                <%= f.genre.downcase.capitalize %>
+              <% end %>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+              <% if f.name.present? %>
+                <%= f.name.upcase %>
+              <% end %>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+              <% if f.surname.present? %>
+                <%= f.surname.upcase %>
+              <% end %>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+              <% if f.city.present? %>
+                <%= f.city.downcase.capitalize  %>
+              <% end %>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+              <% if f.zipcode.present? %>
+                <%= f.zipcode  %>
+              <% end %>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
+              <% if f.country.present? %>
+                <%= f.country.downcase.capitalize  %>
+              <% end %>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <% if f.email.present? %>
+                <%= f.email %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+<% end %>
+
+
+
+

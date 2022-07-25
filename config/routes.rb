@@ -30,10 +30,6 @@
     collection {post :import}
     collection {get :export}
   end
-  resources :raba_customers do
-    collection {post :import}
-    collection {get :export}
-  end
   resources :brindos_customers do
     collection {post :import}
     collection {get :export}
@@ -79,6 +75,26 @@
     collection {get :export}
   end
   resources :ghso_spa_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :raba_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :raba_room_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :raba_restaurant_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :raba_spa_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :raba_pro_customers do
     collection {post :import}
     collection {get :export}
   end
