@@ -27,6 +27,9 @@
   <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#sacy">
     Maison de Sacy
   </div>
+  <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#theoule">
+    Maison de Théoule
+  </div>
   <div class="row">
     <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Envoyer un message</div></a>
   </div>
@@ -180,6 +183,36 @@
           </div>
           <div class="row">
             <%= link_to "Clients pro de sacy", sacy_pro_customers_path, class: 'cardex-segment'  %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="theoule" tabindex="-1" aria-labelledby="cardex-theoule" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-theoule">Cardex du Château de theoule</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <%= link_to "Maison de theoule", theoule_customers_path, class: 'cardex-segment' %>
+          </div>
+          <div class="row">
+            <%= link_to "Transats de theoule", theoule_beach_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Restaurant de theoule", theoule_restaurant_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Clients du spa de theoule", theoule_spa_customers_path, class: 'cardex-segment'  %>
           </div>
         </div>
       </div>

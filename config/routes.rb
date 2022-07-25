@@ -126,5 +126,17 @@
     collection {post :import}
     collection {get :export}
   end
+  resources :theoule_beach_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :theoule_spa_customers do
+    collection {post :import}
+    collection {get :export}
+  end
+  resources :theoule_restaurant_customers do
+    collection {post :import}
+    collection {get :export}
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
