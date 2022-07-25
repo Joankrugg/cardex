@@ -17,15 +17,14 @@ class TheouleBeachCustomer < ApplicationRecord
   end
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      TheouleBeachCustomer.where(email: row[6]).first_or_create do |c|
+      TheouleBeachCustomer.where(email: row[3]).first_or_create do |c|
         c.genre = row[0]
         c.name = row[1]
         c.surname = row[2]
-        c.zipcode = row[3]
-        c.city = row[4]
-        c.country = row[5]
+        c.country = row[4]
+        c.zipcode = row[5]
+        c.city = row[6]
         c.birth = row[7]
-        c.segment = row[8]
       end
     end
   end
