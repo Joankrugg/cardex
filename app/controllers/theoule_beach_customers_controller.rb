@@ -1,5 +1,5 @@
 require 'csv'
-class Theoule_beachCustomersController < ApplicationController
+class TheouleBeachCustomersController < ApplicationController
   before_action :set_theoule_beach_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
