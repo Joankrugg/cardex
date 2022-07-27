@@ -70,6 +70,6 @@ class BrindosCustomersController < ApplicationController
   end
 
   def brindos_customer_params
-    params.require(:brindos_customer).permit(:genre, :name, :surname, :email, :zipcode, :city, :country, :birth, :unsubscribe)
+    params.require(:brindos_customer).permit(:genre, :name, :surname, :email, :country, :zipcode, :city, :birth, :phone, :unsubscribe)
   end
 end
