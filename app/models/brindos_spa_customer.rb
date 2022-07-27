@@ -25,6 +25,7 @@ class BrindosSpaCustomer < ApplicationRecord
         c.zipcode = row[5]
         c.city = row[6]
         c.birth = row[7]
+        c.phone = row[8]
       end
     end
   end
