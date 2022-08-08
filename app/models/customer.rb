@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
   pg_search_scope :customer_search,
     against: [ :name, :mail ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 
   def self.to_csv(fields = column_names, options =  {})

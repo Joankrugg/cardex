@@ -1,5 +1,5 @@
 class BrindosCustomer < ApplicationRecord
-  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
+  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
   validates :email, uniqueness: true
   include PgSearch::Model
   pg_search_scope :brindos_search,
