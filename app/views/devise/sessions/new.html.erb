@@ -1,43 +1,43 @@
-<div class="container login">
-  <div class="row">
-    <div class="col-lg-6 col-12 mx-auto">
-      <h2 class='connect'>Se connecter</h2>
+<div class="zone"></div>
+<div class="container">
+  <div class="col-lg-6 mx-auto">
+    <div class="login-form">
+      <div class="row">
+        <h2 class='connect'>Se connecter</h2>
+      </div>
+
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="row">
+          <div class="col-10 mx-auto line">
+            <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10 mx-auto line">
+            <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10 mx-auto line">
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10 mx-auto line">
+            <div class="press"><%= f.button :submit, "Se connecter" %></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10 mx-auto line">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <div class="row connect-line">
-        <div class="col-lg-6 col-12 mx-auto">
-          <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-        </div>
-      </div>
-      <div class="row connect-line">
-        <div class="col-lg-6 col-12 mx-auto">
-          <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-        </div>
-      </div>
-      <div class="row connect-line">
-        <div class="col-lg-6 col-12 mx-auto">
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
-      </div>
-    </div>
-
-    <div class="row connect-line">
-      <div class="col-lg-6 col-12 mx-auto">
-        <div class="press"><%= f.button :submit, "Se connecter" %></div>
-      </div>
-    </div>
-    <div class="row connect-line">
-      <div class="col-lg-6 col-12 mx-auto">
-        <%= render "devise/shared/links" %>
-      </div>
-    </div>
-  <% end %>
 </div>

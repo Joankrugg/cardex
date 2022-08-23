@@ -1,5 +1,5 @@
 class RabaSpaCustomer < ApplicationRecord
-  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
+  validates :email, uniqueness: true
   include PgSearch::Model
   pg_search_scope :raba_spa_search,
     against: [ :city, :country, :name, :genre, :email, :unsubscribe ],

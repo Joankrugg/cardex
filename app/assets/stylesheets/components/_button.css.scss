@@ -2,10 +2,34 @@
   border: solid 1px;
   padding: 5px 10px;
   border-radius: 3px;
-  background-image: linear-gradient(#b99848, #e1ca95);
+  background-image: linear-gradient(#3fc42b, #1dff00);
 }
 
 .btn-nav:hover{
+  background-image: linear-gradient(white, white);
+}
+
+.btn-nav-pro{
+  border: solid 1px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-image: linear-gradient(#b99848, #e1ca95);
+  color: white;
+}
+
+.btn-nav-pro:hover{
+  background-image: linear-gradient(white, white);
+}
+
+.btn-nav-visitor{
+  border: solid 1px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-image: linear-gradient(#b99848, #e1ca95);
+  color: white;
+}
+
+.btn-nav-visitor:hover{
   background-image: linear-gradient(white, white);
 }
 

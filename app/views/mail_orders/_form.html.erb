@@ -1,38 +1,40 @@
-<div class="container bloc">
-  <div class="mail-order-form">
-    <%= simple_form_for @mail_order do |f| %>
-      <div class="row">
-        <div class="col-12 col-md-9 col-lg-8 mx-auto">
-          <%= f.input :goal %>
+<div class="zone"></div>
+<div class="container">
+  <div class="col-lg-6 mx-auto">
+    <div class="mail-order-form">
+      <%= simple_form_for @mail_order do |f| %>
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-8 mx-auto">
+            <%= f.input :goal %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-9 col-lg-8 mx-auto">
-          <%= f.input :title %>
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-8 mx-auto">
+            <%= f.input :title %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-9 col-lg-8 mx-auto">
-          <%= f.input :photo %>
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-8 mx-auto">
+            <%= f.input :photo %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-9 col-lg-8 mx-auto">
-          <%= f.input :text %>
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-8 mx-auto">
+            <%= f.input :text %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-9 col-lg-8 mx-auto">
-          <%= f.input :send_date %>
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-8 mx-auto">
+            <%= f.input :send_date %>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-9 col-lg-8 mx-auto">
-          <%= f.button :submit, 'valider' %>
+        <div class="row">
+          <div class="col-12 col-md-9 col-lg-8 mx-auto">
+            <%= f.button :submit, 'valider' %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>
 
 

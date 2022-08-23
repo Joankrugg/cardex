@@ -4,9 +4,22 @@
       <%= image_tag "https://res.cloudinary.com/da2krghvd/image/upload/v1657396983/Mille%CC%81sime_zsbeqt.webp" %>
     <% end %>
 
-    <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#triggers">
-      Trouvez un cardex Millésime
-    </div>
+
+    <% unless user_signed_in? %>
+      <div class="btn btn-nav" data-bs-toggle="modal" data-bs-target="#triggers">
+        Connectez-vous !
+      </div>
+    <% else %>
+      <% if current_user.email.include?('millesime-collection.com') %>
+        <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#pros">
+          Vous êtes connecté(e)
+        </div>
+      <% else %>
+        <div class="btn btn-nav-visitor" data-bs-toggle="modal" data-bs-target="#visitors">
+          Créez-vous un profil Millésimé
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 <!-- Modal -->
@@ -19,31 +32,60 @@
       </div>
       <div class="modal-body">
         <div class="container">
-          <% if user_signed_in? %>
-            <div class="row">
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <div class="col-12 cardex">Se déconnecter</div>
-              <% end %>
-            </div>
-          <% else %>
-            <%= link_to new_user_session_path do %>
-              <div class="col-12 cardex">Se connecter</div>
-            <% end %>
+          <%= link_to new_user_session_path do %>
+            <div class="col-12 cardex">Se connecter</div>
           <% end %>
-          <div class="row">
-            <%= link_to root_path do %>
-              <div class="col-12 cardex">Maisons</div>
-            <% end %>
-          </div>
-          <div class="row">
-            <%= link_to rails_admin_path do %>
-              <div class="col-12 cardex">Admin</div>
-            <% end %>
-          </div>
+          <%= link_to new_user_registration_path do %>
+            <div class="col-12 cardex">Créer un compte</div>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="pros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cardex</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <%= link_to rails_admin_path do %>
+            <div class="col-12 cardex">Administration</div>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <div class="col-12 cardex">Se déconnecter</div>
+          <% end %>
           <div class="row">
             <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-12 cardex">Envoyer un message</div></a>
           </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="modal fade" id="visitors" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cardex</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <div class="col-12 cardex">Se déconnecter</div>
+          <% end %>
         </div>
       </div>
       <div class="modal-footer">

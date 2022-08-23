@@ -1,5 +1,4 @@
 class SacySpaCustomer < ApplicationRecord
-  validates :email, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
   validates :email, uniqueness: true
   include PgSearch::Model
   pg_search_scope :sacy_spa_search,
