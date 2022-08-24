@@ -1,7 +1,8 @@
 class Customer < ApplicationRecord
   validates :mail, uniqueness: true
-  belongs_to :sector
-  belongs_to :creator
+  belongs_to :sector, optional: true
+  belongs_to :creator, optional: true
+  belongs_to :type, optional: true
 
   include PgSearch::Model
   pg_search_scope :customer_search,
