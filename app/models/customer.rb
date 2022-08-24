@@ -1,5 +1,7 @@
 class Customer < ApplicationRecord
   validates :mail, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
+  belongs_to :sector
+  belongs_to :creator
 
   include PgSearch::Model
   pg_search_scope :customer_search,
