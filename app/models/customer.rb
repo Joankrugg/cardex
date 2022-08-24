@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-  validates :mail, format: { with:  /\A[^@\s]+@[^@\s]+\z/}, allow_blank: true
+  validates :mail, uniqueness: true
   belongs_to :sector
   belongs_to :creator
 

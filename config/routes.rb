@@ -17,6 +17,7 @@
 
   resources :customers do
     collection {post :import }
+    collection {get :export}
   end
   resources :millesime_customers do
     collection {post :import}

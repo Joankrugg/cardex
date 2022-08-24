@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :set_customer, only: [:edit, :update]
   def index
     if params[:search].present?
       @customers = Customer.customer_search(params[:search])
@@ -28,12 +29,29 @@ class CustomersController < ApplicationController
       render :new
     end
   end
+  def edit
+
+  end
+
+  def update
+    if @customer.update(customer_params)
+      redirect_to customers_path
+    else
+      render :edit
+    end
+  end
 
   def import
     Customer.import(params[:file])
   end
 
   private
+
+  private
+
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
 
   def customer_params
     params.require(:customer).permit(:name, :mail)
