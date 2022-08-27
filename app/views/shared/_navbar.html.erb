@@ -33,15 +33,12 @@
       <div class="modal-body">
         <div class="container">
           <%= link_to new_user_session_path do %>
-            <div class="col-12 cardex">Se connecter</div>
+            <div class="btn btn-nav-pro center">Se connecter</div>
           <% end %>
           <%= link_to new_user_registration_path do %>
-            <div class="col-12 cardex">Créer un compte</div>
+            <div class="btn btn-nav-pro center">Créer un compte</div>
           <% end %>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -56,19 +53,16 @@
       </div>
       <div class="modal-body">
         <div class="container">
-          <%= link_to rails_admin_path do %>
-            <div class="col-12 cardex">Administration</div>
-          <% end %>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <div class="col-12 cardex">Se déconnecter</div>
+            <div class="cardex-segment">Se déconnecter</div>
           <% end %>
           <div class="row">
-            <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-12 cardex">Envoyer un message</div></a>
+            <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="cardex-segment">Envoyer un message</div></a>
           </div>
+          <%= link_to rails_admin_path do %>
+            <div class="cardex-segment">Administration</div>
+          <% end %>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -84,7 +78,7 @@
       <div class="modal-body">
         <div class="container">
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <div class="col-12 cardex">Se déconnecter</div>
+            <div class="btn btn-nav-pro center">Se déconnecter</div>
           <% end %>
         </div>
       </div>
