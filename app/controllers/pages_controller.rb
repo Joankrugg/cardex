@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @customers = Customer.all
     @contact = Contact.new
+    @mail_order = MailOrder.new
   end
 
   def brindos_lac_et_chateau

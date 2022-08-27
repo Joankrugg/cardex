@@ -1,7 +1,7 @@
 <div class="zone"></div>
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+    <div class="col-lg-4 col-md-6 col-sm-8 col-10 mx-auto">
       <img src= 'https://res.cloudinary.com/da2krghvd/image/upload/v1658748177/Mill%C3%A9sime/Logo-Millesime_18MARs2020_v1.2.png' class= 'img-fluid' style='margin-top: 30px;margin-bottom: 30px;'>
     </div>
   </div>
@@ -12,9 +12,7 @@
     <% if user_signed_in? %>
       <% if current_user.email.include?('@millesime-collection.com') %>
         <div class="row">
-          <%= link_to new_mail_order_path do %>
-            <div class="btn btn-nav-pro center">Commande d'email</div>
-          <% end %>
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#mail_order">Commande d'email</div>
         </div>
         <div class="row">
           <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#brindos">
@@ -93,6 +91,46 @@
                   </div>
                   <div class="col-12">
                     <%= f.input :email, label: 'Votre Email'%>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 form-btn ">
+                    <%= f.button :submit, 'Valider', class: 'btn btn-validate' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="mail_order" tabindex="-1" aria-labelledby="mail_order" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-mail_order">Demande de mailing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <%= simple_form_for @mail_order do |f| %>
+            <div class="row">
+              <div class="col-12 form">
+                <h3>Mail</h3>
+                <div class="row">
+                  <div class="col-12">
+                    <%= f.input :title, label: 'Titre du mail' %>
+                  </div>
+                  <div class="col-12">
+                    <%= f.input :goal, label: 'Objectif du mail' %>
+                  </div>
+                  <div class="col-12">
+                    <%= f.input :text, label: 'Contenu du mail'%>
+                  </div>
+                  <div class="col-12">
+                    <%= f.input :send_date, label: "Date d'envoi souhaitée"%>
                   </div>
                 </div>
                 <div class="row">
