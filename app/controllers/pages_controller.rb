@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @customers = Customer.all
+    @contact = Contact.new
   end
 
   def brindos_lac_et_chateau

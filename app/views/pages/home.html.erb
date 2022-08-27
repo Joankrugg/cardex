@@ -6,50 +6,109 @@
     </div>
   </div>
   <div class="row">
-    <% if user_signed_in? && current_user.email.include?('@millesime-collection.com') || user_signed_in? && current_user.admin? %>
-      <%= link_to new_mail_order_path do %>
-        <div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Commande d'email</div>
+    <% unless user_signed_in? %>
+      <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#contact">Répondre à la question</div>
+    <% end %>
+    <% if user_signed_in? %>
+      <% if current_user.email.include?('@millesime-collection.com') %>
+        <div class="row">
+          <%= link_to new_mail_order_path do %>
+            <div class="btn btn-nav-pro center">Commande d'email</div>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#brindos">
+            Brindos Lac et Château
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#leognan">
+            Le Manège
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#megeve">
+            Le Soleil d'Or
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#raba">
+            Le Domaine de Raba
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#sacy">
+            Le Château deSacy
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#theoule">
+            La Plage Blanche
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#porto">
+            Cocorico
+          </div>
+        </div>
+        <div class="row">
+          <div class="btn btn-nav-pro center">
+            <a href="https://api.whatsapp.com/send?phone=33652751072">Envoyer un message</a>
+          </div>
+        </div>
+        <div class="row">
+          <%= link_to customers_path do %>
+            <div class="btn btn-nav-pro center">Le MICE par Millésime</div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="row">
+          <div class="btn btn-nav-pro center">Créez vous un profil millésimé</div>
+        </div>
       <% end %>
     <% end %>
   </div>
-  <div class="row">
-    <div class="col-lg-10 col-12 mx-auto home-buttons">
-      <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#brindos">
-        Brindos Lac et Château
+</div>
+
+<div class="modal fade" id="contact" tabindex="-1" aria-labelledby="contact" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-contact">Question</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#leognan">
-        Le Manège
+      <div class="modal-body">
+        <div class="container">
+          <%= simple_form_for @contact do |f| %>
+            <div class="row">
+              <div class="col-12 form">
+                <h3>Question</h3>
+                <div class="row">
+                  <div class="col-12">
+                    <%= f.input :answer, label: 'Votre Réponse' %>
+                  </div>
+                  <div class="col-12">
+                    <%= f.input :surname, label: 'Votre Prénom' %>
+                  </div>
+                  <div class="col-12">
+                    <%= f.input :name, label: 'Votre nom'%>
+                  </div>
+                  <div class="col-12">
+                    <%= f.input :email, label: 'Votre Email'%>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 form-btn ">
+                    <%= f.button :submit, 'Valider', class: 'btn btn-validate' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#megeve">
-        Le Soleil d'Or
-      </div>
-      <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#raba">
-        Le Domaine de Raba
-      </div>
-      <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#sacy">
-        Le Château deSacy
-      </div>
-      <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#theoule">
-        La Plage Blanche
-      </div>
-      <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#porto">
-        Cocorico
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6 mx-auto">
-      <div class="row">
-        <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="col-4 col-md-6 col-sm-9 col-xs-12 mx-auto cardex">Envoyer un message</div></a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6 mx-auto">
-      <div class="row">
-        <%= link_to customers_path do %>
-          <div class="btn btn-nav-pro center">Le MICE par Millésime</div>
-        <% end %>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -267,3 +326,5 @@
     </div>
   </div>
 </div>
+
+

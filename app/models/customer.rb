@@ -6,7 +6,12 @@ class Customer < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :customer_search,
-    against: [ :name, :mail ],
+    against: [ :name, :mail, :city, :country, :zipcode],
+    associated_against:{
+    creator: [ :name ],
+    type: [ :name ],
+    sector: [ :name ]
+  },
     using: {
       tsearch: { prefix: true }
     }

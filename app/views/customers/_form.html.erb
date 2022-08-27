@@ -4,6 +4,9 @@
     <div class="row">
       <div class="col-12 form">
         <h3>Client MICE</h3>
+        <%= link_to customers_path do %>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        <% end %>
         <div class="row">
           <div class="col-2">
             <%= f.association :creator, label: "Nom du référent" %>
@@ -17,9 +20,6 @@
           <div class="col-4">
             <%= f.input :type_name, label: 'Nom de société' %>
           </div>
-
-        </div>
-        <div class="row">
           <div class="col-1">
             <%= f.input :genre %>
           </div>
@@ -35,21 +35,21 @@
           <div class="col-4">
             <%= f.input :position %>
           </div>
-        </div>
-        <div class="row">
           <div class="col-1">
             <%= f.input :zipcode  %>
           </div>
           <div class="col-2">
             <%= f.input :city  %>
           </div>
-
+          <div class="col-2">
+            <%= f.input :country, as: :string  %>
+          </div>
           <div class="col-2">
             <%= f.input :phone  %>
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 form-btn ">
             <%= f.button :submit, 'Valider', class: 'btn btn-validate' %>
           </div>
         </div>

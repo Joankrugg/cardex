@@ -1,0 +1,33 @@
+<div class="zone"></div>
+<div class="container form-for-new">
+  <%= simple_form_for @contact do |f| %>
+    <div class="row">
+      <div class="col-12 form">
+        <h3>Question</h3>
+        <%= link_to contacts_path do %>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        <% end %>
+        <div class="row">
+          <div class="col-12">
+            <%= f.input :surname %>
+          </div>
+          <div class="col-12">
+            <%= f.input :name%>
+          </div>
+          <div class="col-12">
+            <%= f.input :email%>
+          </div>
+          <div class="col-12">
+            <%= f.input :answer %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 form-btn ">
+            <%= f.button :submit, 'Valider', class: 'btn btn-validate' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

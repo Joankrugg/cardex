@@ -1,6 +1,7 @@
 .form{
   background-color: white;
   padding: 20px;
+  position: relative;
 }
 
 .form-for-new{
@@ -9,4 +10,15 @@
 .form h3{
   text-align: center;
   margin-bottom: 20px;
+}
+
+.form-btn .btn-validate{
+  margin-top: 20px;
+}
+
+.form .btn-close{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
 }

@@ -1,4 +1,5 @@
  Rails.application.routes.draw do
+  get 'contacts/new'
   root to: 'pages#home'
   get 'brindos_lac_et_chateau', to:'pages#brindos_lac_et_chateau'
   get 'cocorico', to: 'pages#cocorico'
@@ -14,6 +15,8 @@
     collection {post :import}
   end
   devise_for :users
+
+  resources :contacts
 
   resources :customers do
     collection {post :import }
