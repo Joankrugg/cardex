@@ -10,7 +10,7 @@
         Connectez-vous !
       </div>
     <% else %>
-      <% if current_user.email.include?('millesime-collection.com') %>
+      <% if current_user.marketing? %>
         <div class="btn btn-nav-pro" data-bs-toggle="modal" data-bs-target="#pros">
           Vous êtes connecté(e)
         </div>
