@@ -1,5 +1,5 @@
 <div class="zone"></div>
-<% if user_signed_in? && current_user.email.include?('millesime-collection.com') %>
+<% if user_signed_in? && current_user.marketing? %>
   <div class="search-form">
     <%= form_tag(megeve_room_customers_path, method: :get) do %>
       <div class="search-form-control form-group">
