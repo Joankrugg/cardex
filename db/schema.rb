@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_29_091756) do
+ActiveRecord::Schema.define(version: 2022_08_29_103117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -235,6 +235,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
+    t.string "activity"
   end
 
   create_table "leognan_customers", force: :cascade do |t|
@@ -345,6 +346,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activity"
   end
 
   create_table "megeve_room_customers", force: :cascade do |t|
@@ -362,6 +364,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activity"
   end
 
   create_table "millesime_customers", force: :cascade do |t|
@@ -507,6 +510,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activity"
   end
 
   create_table "raba_room_customers", force: :cascade do |t|
@@ -524,6 +528,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activity"
   end
 
   create_table "raba_spa_customers", force: :cascade do |t|
@@ -540,6 +545,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
+    t.string "activity"
   end
 
   create_table "sacy_customers", force: :cascade do |t|
@@ -589,6 +595,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activity"
   end
 
   create_table "sacy_room_customers", force: :cascade do |t|
@@ -606,6 +613,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activity"
   end
 
   create_table "sacy_spa_customers", force: :cascade do |t|
@@ -622,6 +630,7 @@ ActiveRecord::Schema.define(version: 2022_08_29_091756) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "phone"
     t.boolean "unsubscribe", default: false
+    t.string "activity"
   end
 
   create_table "sectors", force: :cascade do |t|
