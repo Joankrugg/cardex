@@ -36,11 +36,24 @@ class RabaCustomersController < ApplicationController
   end
 
   def update
-    if @porto_customer.update(porto_customer_params)
-      redirect_to porto_customers_path
+    if @raba_customer.update(raba_customer_params)
+      redirect_to raba_customers_path
     else
       render :edit
     end
+  end
+
+  def clean
+    @raba_customers = RabaCustomer.all
+    @raba_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to raba_customers_path
   end
 
   def import

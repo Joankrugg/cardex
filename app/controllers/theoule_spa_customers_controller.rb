@@ -43,6 +43,19 @@ class TheouleSpaCustomersController < ApplicationController
     end
   end
 
+  def clean
+    @theoule_spa_customers = TheouleSpaCustomer.all
+    @theoule_spa_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to theoule_spa_customers_path
+  end
+
   def import
     TheouleSpaCustomer.import(params[:file])
   end

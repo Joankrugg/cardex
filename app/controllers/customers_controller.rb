@@ -29,6 +29,7 @@ class CustomersController < ApplicationController
       render :new
     end
   end
+
   def edit
 
   end
@@ -44,8 +45,6 @@ class CustomersController < ApplicationController
   def import
     Customer.import(params[:file])
   end
-
-  private
 
   private
 

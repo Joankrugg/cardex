@@ -43,6 +43,19 @@ class RabaRestaurantCustomersController < ApplicationController
     end
   end
 
+  def clean
+    @raba_restaurant_customers = RabaRestaurantCustomer.all
+    @raba_restaurant_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to raba_restaurant_customers_path
+  end
+
   def import
     RabaRestaurantCustomer.import(params[:file])
   end

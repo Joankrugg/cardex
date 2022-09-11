@@ -44,6 +44,19 @@ class BrindosSpaCustomersController < ApplicationController
     end
   end
 
+  def clean
+    @brindos_spa_customers = BrindosSpaCustomer.all
+    @brindos_spa_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to brindos_spa_customers_path
+  end
+
   def import
     BrindosSpaCustomer.import(params[:file])
   end

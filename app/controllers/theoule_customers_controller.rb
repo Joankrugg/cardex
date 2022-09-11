@@ -43,6 +43,19 @@ class TheouleCustomersController < ApplicationController
     end
   end
 
+  def clean
+    @theoule_customers = TheouleCustomer.all
+    @theoule_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to theoule_customers_path
+  end
+
   def import
     TheouleCustomer.import(params[:file])
   end

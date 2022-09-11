@@ -43,6 +43,19 @@ class LeognanCustomersController < ApplicationController
     end
   end
 
+  def clean
+    @leognan_customers = LeognanCustomer.all
+    @leognan_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to leognan_customers_path
+  end
+
   def import
     LeognanCustomer.import(params[:file])
   end

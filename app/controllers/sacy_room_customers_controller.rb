@@ -43,6 +43,19 @@ class SacyRoomCustomersController < ApplicationController
     end
   end
 
+  def clean
+    @sacy_room_customers = SacyRoomCustomer.all
+    @sacy_room_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to sacy_room_customers_path
+  end
+
   def import
     SacyRoomCustomer.import(params[:file])
   end

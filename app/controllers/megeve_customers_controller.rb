@@ -41,6 +41,19 @@ class MegeveCustomersController < ApplicationController
     end
   end
 
+  def clean
+    @megeve_customers = MegeveCustomer.all
+    @megeve_customers.each do |rb|
+      if rb.email.present?
+        if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
+          rb.unsubscribe = true
+          rb.save!
+        end
+      end
+    end
+    redirect_to megeve_customers_path
+  end
+
   def import
     MegeveCustomer.import(params[:file])
     redirect_to root_url, notice: 'megeve_customers imported.'

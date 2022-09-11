@@ -19,10 +19,10 @@
   <div class="actions">
     <div class="container">
       <div class="row action-buttons">
-        <div class="col-4 mx-auto">
+        <div class="col-3 mx-auto">
           <%= link_to 'Créer un client de Brindos pro', new_brindos_pro_customer_path, class: 'btn btn-validate' %>
         </div>
-        <div class="col-4 mx-auto">
+        <div class="col-3 mx-auto">
           <form enctype="multipart/form-data" action="/brindos_pro_customers/import" accept-charset="UTF-8" method="post" class='import'><input type="hidden" name="authenticity_token" value="SzUvUwGk4iw8rAUxiidkvP0sINcbIdCDvYGQuTzr1nUfuadjaPkE8h9heKLeq7fNngNA/RmF5w3EyupKmEiylg==">
             <label for="file" class="custom-file-upload">
               'CSV'
@@ -31,8 +31,11 @@
             <input type="submit" name="commit" value="importer" class="btn btn-validate" data-disable-with="importer">
           </form>
         </div>
-        <div class="col-4 mx-auto">
+        <div class="col-3 mx-auto">
           <%= link_to 'Télécharger un CSV', brindos_pro_customers_path(format: "csv"), class: 'btn btn-validate' %>
+        </div>
+        <div class="col-3 mx-auto">
+          <%= link_to 'Nettoyer', clean_brindos_pro_customers_path, class: 'btn btn-validate' %>
         </div>
       </div>
     </div>
