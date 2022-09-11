@@ -10,51 +10,61 @@
       <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#contact">Répondre à la question</div>
     <% end %>
     <% if user_signed_in? %>
-      <% if current_user.email.include?('@millesime-collection.com') %>
+      <% if current_user.marketing? %>
+
         <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#mail_order">Commande d'email</div>
-        </div>
-        <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#brindos">
-            Brindos Lac et Château
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#brindos">
+              Brindos Lac et Château
+            </div>
+          </div>
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#leognan">
+              Le Manège
+            </div>
+          </div>
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#megeve">
+              Le Soleil d'Or
+            </div>
+          </div>
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#raba">
+              Le Domaine de Raba
+            </div>
+          </div>
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#sacy">
+              Le Château de Sacy
+            </div>
+          </div>
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#theoule">
+              La Plage Blanche
+            </div>
+          </div>
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#porto">
+              Cocorico
+            </div>
           </div>
         </div>
+
         <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#leognan">
-            Le Manège
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#mail_order">Commande d'email</div>
+          </div>
+
+          <div class="col-lg-3 mx-auto space">
+            <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="btn btn-nav-pro center">Envoyer un message</div></a>
           </div>
         </div>
-        <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#megeve">
-            Le Soleil d'Or
-          </div>
-        </div>
-        <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#raba">
-            Le Domaine de Raba
-          </div>
-        </div>
-        <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#sacy">
-            Le Château deSacy
-          </div>
-        </div>
-        <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#theoule">
-            La Plage Blanche
-          </div>
-        </div>
-        <div class="row">
-          <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#porto">
-            Cocorico
-          </div>
-        </div>
-        <div class="row">
-          <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="btn btn-nav-pro center">Envoyer un message</div></a>
-        </div>
+
         <div class="row">
           <%= link_to customers_path do %>
-            <div class="btn btn-nav-pro center">Le MICE par Millésime</div>
+            <div class="col-lg-3 mx-auto space">
+              <div class="btn btn-nav-pro center">Le MICE par Millésime</div>
+            </div>
           <% end %>
         </div>
       <% else %>
