@@ -2,7 +2,7 @@ class TheouleBeachCustomer < ApplicationRecord
   validates :email, uniqueness: true
   include PgSearch::Model
   pg_search_scope :theoule_beach_search,
-    against: [ :city, :country, :name, :genre ],
+    against: [ :city, :country, :name, :genre, :unsubscribe, :email ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
