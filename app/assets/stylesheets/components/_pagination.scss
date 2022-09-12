@@ -1,3 +1,12 @@
+.footer{
+  z-index: 2;
+  background: black;
+  width: 100%;
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+}
+
 .pagination{
   display: block;
   width: 350px;

@@ -3,13 +3,13 @@ class FrancophoneCustomersController < ApplicationController
   before_action :set_francophone_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @francophone_customers = FrancophoneCustomer.francophone_search(params[:search])
+      @francophone_customers = FrancophoneCustomer.francophone_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @francophone_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @francophone_customers = FrancophoneCustomer.all
+      @francophone_customers = FrancophoneCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @francophone_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

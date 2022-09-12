@@ -3,13 +3,13 @@ class PortoCustomersController < ApplicationController
   before_action :set_porto_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @porto_customers = PortoCustomer.porto_search(params[:search])
+      @porto_customers = PortoCustomer.porto_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @porto_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @porto_customers = PortoCustomer.all
+      @porto_customers = PortoCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @porto_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

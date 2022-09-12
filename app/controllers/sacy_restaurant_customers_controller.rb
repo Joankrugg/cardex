@@ -3,13 +3,13 @@ class SacyRestaurantCustomersController < ApplicationController
   before_action :set_sacy_restaurant_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @sacy_restaurant_customers = SacyRestaurantCustomer.sacy_restaurant_search(params[:search])
+      @sacy_restaurant_customers = SacyRestaurantCustomer.sacy_restaurant_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @sacy_restaurant_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @sacy_restaurant_customers = SacyRestaurantCustomer.all
+      @sacy_restaurant_customers = SacyRestaurantCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @sacy_restaurant_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

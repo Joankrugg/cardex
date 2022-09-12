@@ -3,13 +3,13 @@ class RabaRestaurantCustomersController < ApplicationController
   before_action :set_raba_restaurant_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @raba_restaurant_customers = RabaRestaurantCustomer.raba_restaurant_search(params[:search])
+      @raba_restaurant_customers = RabaRestaurantCustomer.raba_restaurant_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @raba_restaurant_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @raba_restaurant_customers = RabaRestaurantCustomer.all
+      @raba_restaurant_customers = RabaRestaurantCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @raba_restaurant_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

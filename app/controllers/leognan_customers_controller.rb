@@ -3,13 +3,13 @@ class LeognanCustomersController < ApplicationController
   before_action :set_leognan_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @leognan_customers = LeognanCustomer.leognan_search(params[:search])
+      @leognan_customers = LeognanCustomer.leognan_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @leognan_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @leognan_customers = LeognanCustomer.all
+      @leognan_customers = LeognanCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @leognan_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

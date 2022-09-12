@@ -3,13 +3,13 @@ class MegeveRestaurantCustomersController < ApplicationController
   before_action :set_megeve_restaurant_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @megeve_restaurant_customers = MegeveRestaurantCustomer.megeve_restaurant_search(params[:search])
+      @megeve_restaurant_customers = MegeveRestaurantCustomer.megeve_restaurant_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @megeve_restaurant_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @megeve_restaurant_customers = MegeveRestaurantCustomer.all
+      @megeve_restaurant_customers = MegeveRestaurantCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @megeve_restaurant_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

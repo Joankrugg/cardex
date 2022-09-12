@@ -3,13 +3,13 @@ class TheouleBeachCustomersController < ApplicationController
   before_action :set_theoule_beach_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @theoule_beach_customers = TheouleBeachCustomer.theoule_beach_search(params[:search])
+      @theoule_beach_customers = TheouleBeachCustomer.theoule_beach_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @theoule_beach_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @theoule_beach_customers = TheouleBeachCustomer.all
+      @theoule_beach_customers = TheouleBeachCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @theoule_beach_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

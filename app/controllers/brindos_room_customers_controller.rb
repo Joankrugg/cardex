@@ -4,13 +4,13 @@ class BrindosRoomCustomersController < ApplicationController
 
   def index
     if params[:search].present?
-      @brindos_room_customers = BrindosRoomCustomer.brindos_room_search(params[:search])
+      @brindos_room_customers = BrindosRoomCustomer.brindos_room_search(params[:search]).paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @brindos_room_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @brindos_room_customers = BrindosRoomCustomer.all
+      @brindos_room_customers = BrindosRoomCustomer.all.paginate(page: params[:page], per_page: 30)
       respond_to do |format|
         format.html
         format.csv { send_data @brindos_room_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
