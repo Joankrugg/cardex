@@ -45,7 +45,7 @@ class GhsoSpaCustomersController < ApplicationController
   end
 
   def clean
-    @ghso_customers = GhsoCustomer.all
+    @ghso_spa_customers = GhsoSpaCustomer.all
     @ghso_customers.each do |rb|
       if rb.email.present?
         if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
@@ -54,7 +54,7 @@ class GhsoSpaCustomersController < ApplicationController
         end
       end
     end
-    redirect_to ghso_customers_path
+    redirect_to ghso_spa_customers_path
   end
 
   def import
