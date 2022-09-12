@@ -2,7 +2,7 @@ class BrindosSpaCustomer < ApplicationRecord
   validates :email, uniqueness: true
   include PgSearch::Model
   pg_search_scope :brindos_spa_search,
-    against: [ :city, :country, :name, :genre, :email, :unsubscribe  ],
+    against: [ :city, :country, :name, :genre, :email, :unsubscribe ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }

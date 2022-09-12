@@ -2,7 +2,7 @@ class SacyProCustomer < ApplicationRecord
   validates :email, uniqueness: true
   include PgSearch::Model
   pg_search_scope :sacy_pro_search,
-    against: [ :city, :country, :name, :genre, :unsubscribe, :email  ],
+    against: [ :city, :country, :name, :genre, :unsubscribe, :email ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
