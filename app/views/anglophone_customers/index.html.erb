@@ -43,26 +43,26 @@
   <div class="column-names">
     <div class="container">
       <div class="row">
-        <div class="col-lg-1 col-md-1 col-sm-1 col-2">
+        <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
           <h3>Titre</h3>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+          <h3>Prénom</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-3">
           <h3>Nom</h3>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
-          <h3>Prénom</h3>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+          <h3>Email</h3>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
           <h3>Ville</h3>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
-          <h3>Code postal</h3>
-        </div>
         <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
           <h3>Pays</h3>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-6">
-          <h3>Email</h3>
+        <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+          <h3>Code postal</h3>
         </div>
       </div>
     </div>
@@ -72,19 +72,24 @@
       <% @anglophone_customers.each do |f| %>
         <%= link_to edit_anglophone_customer_path(f) do %>
           <div class="row customer">
-            <div class="col-lg-1 col-md-1 col-sm-1 col-2">
+            <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
               <% if f.genre.present? %>
                 <%= f.genre.downcase.capitalize %>
               <% end %>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+              <% if f.surname.present? %>
+                <%= f.surname.upcase %>
+              <% end %>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-3">
               <% if f.name.present? %>
                 <%= f.name.upcase %>
               <% end %>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
-              <% if f.surname.present? %>
-                <%= f.surname.upcase %>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+              <% if f.email.present? %>
+                <%= f.email %>
               <% end %>
             </div>
             <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
@@ -92,19 +97,14 @@
                 <%= f.city.downcase.capitalize  %>
               <% end %>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
-              <% if f.zipcode.present? %>
-                <%= f.zipcode  %>
-              <% end %>
-            </div>
             <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block">
               <% if f.country.present? %>
                 <%= f.country.downcase.capitalize  %>
               <% end %>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-6">
-              <% if f.email.present? %>
-                <%= f.email %>
+            <div class="col-lg-2 col-md-2 col-sm-2 d-none d-sm-block">
+              <% if f.zipcode.present? %>
+                <%= f.zipcode  %>
               <% end %>
             </div>
           </div>
