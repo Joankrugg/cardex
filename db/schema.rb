@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_10_105942) do
+ActiveRecord::Schema.define(version: 2022_09_21_084823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_09_10_105942) do
     t.string "booking"
     t.string "address"
     t.boolean "unsubscribe", default: false
+    t.datetime "first_visit"
   end
 
   create_table "brindos_pro_customers", force: :cascade do |t|
@@ -103,6 +104,7 @@ ActiveRecord::Schema.define(version: 2022_09_10_105942) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "activity"
+    t.datetime "first_visit"
   end
 
   create_table "brindos_room_customers", force: :cascade do |t|
@@ -199,6 +201,8 @@ ActiveRecord::Schema.define(version: 2022_09_10_105942) do
     t.string "genre"
     t.bigint "type_id"
     t.string "type_name"
+    t.string "firm"
+    t.datetime "birth"
     t.index ["creator_id"], name: "index_customers_on_creator_id"
     t.index ["sector_id"], name: "index_customers_on_sector_id"
     t.index ["type_id"], name: "index_customers_on_type_id"
