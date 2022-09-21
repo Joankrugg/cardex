@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_084823) do
+ActiveRecord::Schema.define(version: 2022_09_21_092037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2022_09_21_084823) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "anglophone_customers", force: :cascade do |t|
@@ -203,7 +210,12 @@ ActiveRecord::Schema.define(version: 2022_09_21_084823) do
     t.string "type_name"
     t.string "firm"
     t.datetime "birth"
+    t.string "language"
+    t.bigint "activity_id"
+    t.bigint "home_id"
+    t.index ["activity_id"], name: "index_customers_on_activity_id"
     t.index ["creator_id"], name: "index_customers_on_creator_id"
+    t.index ["home_id"], name: "index_customers_on_home_id"
     t.index ["sector_id"], name: "index_customers_on_sector_id"
     t.index ["type_id"], name: "index_customers_on_type_id"
   end
@@ -240,6 +252,12 @@ ActiveRecord::Schema.define(version: 2022_09_21_084823) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
     t.string "activity"
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "leognan_customers", force: :cascade do |t|
@@ -730,7 +748,9 @@ ActiveRecord::Schema.define(version: 2022_09_21_084823) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "customers", "activities"
   add_foreign_key "customers", "creators"
+  add_foreign_key "customers", "homes"
   add_foreign_key "customers", "sectors"
   add_foreign_key "customers", "types"
 end

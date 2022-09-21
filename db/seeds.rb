@@ -34,3 +34,11 @@
 #Type.create(name: 'Wedding Planner')
 #Type.create(name: 'Institution')
 #Type.create(name: 'Influenceur')
+
+Home.create(name: 'Brindos')
+Home.create(name: 'Léognan')
+Home.create(name: 'Megève')
+Home.create(name: 'Porto')
+Home.create(name: 'Raba')
+Home.create(name: 'Sacy')
+Home.create(name: 'Théoule')
