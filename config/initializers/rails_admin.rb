@@ -12,7 +12,13 @@ RailsAdmin.config do |config|
     end
   end
 
-
+  config.model 'BrindosProCustomer' do
+    list do
+        # simply adding fields by their names (order will be maintained)
+      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      items_per_page 100
+    end
+  end
   ### Popular gems integration
 
   ## == Devise ==
