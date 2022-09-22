@@ -1,5 +1,9 @@
 class RabaProCustomer < ApplicationRecord
   validates :email, uniqueness: true
+  belongs_to :sector, optional: true
+  belongs_to :creator, optional: true
+  belongs_to :type, optional: true
+  belongs_to :home, optional: true
   include PgSearch::Model
   pg_search_scope :raba_pro_search,
     against: [ :city, :country, :name, :genre, :email, :unsubscribe ],
