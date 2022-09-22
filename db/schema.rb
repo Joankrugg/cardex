@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_22_142547) do
+ActiveRecord::Schema.define(version: 2022_09_22_145613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -534,6 +534,21 @@ ActiveRecord::Schema.define(version: 2022_09_22_142547) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.string "position"
+    t.string "firm"
+    t.string "language"
+    t.string "activity"
+    t.string "note"
+    t.string "state"
+    t.bigint "sector_id"
+    t.bigint "creator_id"
+    t.bigint "type_id"
+    t.bigint "home_id"
+    t.index ["creator_id"], name: "index_raba_pro_customers_on_creator_id"
+    t.index ["home_id"], name: "index_raba_pro_customers_on_home_id"
+    t.index ["sector_id"], name: "index_raba_pro_customers_on_sector_id"
+    t.index ["type_id"], name: "index_raba_pro_customers_on_type_id"
   end
 
   create_table "raba_pros", force: :cascade do |t|
@@ -791,4 +806,8 @@ ActiveRecord::Schema.define(version: 2022_09_22_142547) do
   add_foreign_key "leognan_pro_customers", "homes"
   add_foreign_key "leognan_pro_customers", "sectors"
   add_foreign_key "leognan_pro_customers", "types"
+  add_foreign_key "raba_pro_customers", "creators"
+  add_foreign_key "raba_pro_customers", "homes"
+  add_foreign_key "raba_pro_customers", "sectors"
+  add_foreign_key "raba_pro_customers", "types"
 end

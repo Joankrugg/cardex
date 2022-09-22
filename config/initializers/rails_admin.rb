@@ -20,7 +20,15 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.model 'leognanProCustomer' do
+  config.model 'LeognanProCustomer' do
+    list do
+        # simply adding fields by their names (order will be maintained)
+      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      items_per_page 100
+    end
+  end
+
+  config.model 'RabaProCustomer' do
     list do
         # simply adding fields by their names (order will be maintained)
       include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
