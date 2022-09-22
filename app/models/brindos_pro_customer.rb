@@ -1,5 +1,8 @@
 class BrindosProCustomer < ApplicationRecord
   validates :email, uniqueness: true
+  belongs_to :sector, optional: true
+  belongs_to :creator, optional: true
+  belongs_to :type, optional: true
   include PgSearch::Model
   pg_search_scope :brindos_pro_search,
     against: [ :city, :country, :name, :genre, :email, :unsubscribe ],

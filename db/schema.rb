@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_22_111915) do
+ActiveRecord::Schema.define(version: 2022_09_22_132611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,21 @@ ActiveRecord::Schema.define(version: 2022_09_22_111915) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.string "position"
+    t.string "firm"
+    t.string "language"
+    t.string "activity"
+    t.string "note"
+    t.string "state"
+    t.bigint "sector_id"
+    t.bigint "creator_id"
+    t.bigint "type_id"
+    t.bigint "home_id"
+    t.index ["creator_id"], name: "index_brindos_pro_customers_on_creator_id"
+    t.index ["home_id"], name: "index_brindos_pro_customers_on_home_id"
+    t.index ["sector_id"], name: "index_brindos_pro_customers_on_sector_id"
+    t.index ["type_id"], name: "index_brindos_pro_customers_on_type_id"
   end
 
   create_table "brindos_restaurant_customers", force: :cascade do |t|
@@ -193,7 +208,7 @@ ActiveRecord::Schema.define(version: 2022_09_22_111915) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.string "mail"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "sector_id"
@@ -749,6 +764,10 @@ ActiveRecord::Schema.define(version: 2022_09_22_111915) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "brindos_pro_customers", "creators"
+  add_foreign_key "brindos_pro_customers", "homes"
+  add_foreign_key "brindos_pro_customers", "sectors"
+  add_foreign_key "brindos_pro_customers", "types"
   add_foreign_key "customers", "creators"
   add_foreign_key "customers", "homes"
   add_foreign_key "customers", "sectors"

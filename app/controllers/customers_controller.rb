@@ -5,13 +5,13 @@ class CustomersController < ApplicationController
       @customers = Customer.customer_search(params[:search])
       respond_to do |format|
         format.html
-        format.csv { send_data @customers.to_csv(['name', 'mail'])}
+        format.csv { send_data @customers.to_csv(['name', 'email'])}
       end
     else
       @customers = Customer.all
       respond_to do |format|
         format.html
-        format.csv { send_data @customers.to_csv(['name', 'mail'])}
+        format.csv { send_data @customers.to_csv(['name', 'email'])}
       end
     end
   end
@@ -53,6 +53,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name, :mail, :address, :creator_id, :type_id, :type_name, :sector_id, :city, :zipcode, :surname, :position, :phone)
+    params.require(:customer).permit(:name, :email, :address, :creator_id, :type_id, :type_name, :sector_id, :city, :zipcode, :surname, :position, :phone)
   end
 end
