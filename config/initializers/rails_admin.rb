@@ -3,6 +3,14 @@ RailsAdmin.config do |config|
   config.authorize_with do |controller|
     redirect_to main_app.root_path unless current_user && current_user.admin
   end
+
+  config.model 'Customer' do
+    list do
+        # simply adding fields by their names (order will be maintained)
+      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      items_per_page 100
+    end
+  end
   ### Popular gems integration
 
   ## == Devise ==

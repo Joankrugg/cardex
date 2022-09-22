@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_123627) do
+ActiveRecord::Schema.define(version: 2022_09_22_111915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -211,12 +211,10 @@ ActiveRecord::Schema.define(version: 2022_09_21_123627) do
     t.string "firm"
     t.datetime "birth"
     t.string "language"
-    t.bigint "activity_id"
     t.bigint "home_id"
     t.string "note"
     t.string "state"
     t.string "activity"
-    t.index ["activity_id"], name: "index_customers_on_activity_id"
     t.index ["creator_id"], name: "index_customers_on_creator_id"
     t.index ["home_id"], name: "index_customers_on_home_id"
     t.index ["sector_id"], name: "index_customers_on_sector_id"
@@ -751,7 +749,6 @@ ActiveRecord::Schema.define(version: 2022_09_21_123627) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "customers", "activities"
   add_foreign_key "customers", "creators"
   add_foreign_key "customers", "homes"
   add_foreign_key "customers", "sectors"
