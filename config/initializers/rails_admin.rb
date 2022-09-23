@@ -7,7 +7,7 @@ RailsAdmin.config do |config|
   config.model 'Customer' do
     list do
         # simply adding fields by their names (order will be maintained)
-      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
       items_per_page 100
     end
   end
@@ -15,7 +15,7 @@ RailsAdmin.config do |config|
   config.model 'BrindosProCustomer' do
     list do
         # simply adding fields by their names (order will be maintained)
-      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
       items_per_page 100
     end
   end
@@ -23,7 +23,7 @@ RailsAdmin.config do |config|
   config.model 'LeognanProCustomer' do
     list do
         # simply adding fields by their names (order will be maintained)
-      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
       items_per_page 100
     end
   end
@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
   config.model 'RabaProCustomer' do
     list do
         # simply adding fields by their names (order will be maintained)
-      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
       items_per_page 100
     end
   end
@@ -39,7 +39,7 @@ RailsAdmin.config do |config|
   config.model 'SacyProCustomer' do
     list do
         # simply adding fields by their names (order will be maintained)
-      include_fields :surname, :name, :country, :type, :activity, :home, :sector, :firm
+      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
       items_per_page 100
     end
   end
