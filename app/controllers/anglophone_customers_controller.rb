@@ -3,7 +3,7 @@ class AnglophoneCustomersController < ApplicationController
   before_action :set_anglophone_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @anglophone_customers = AnglophoneCustomer.anglophone_search(params[:search]).paginate(page: params[:page], per_page: 150)
+      @anglophone_customers = AnglophoneCustomer.anglophone_search(params[:search])
       respond_to do |format|
         format.html
         format.csv { send_data @anglophone_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

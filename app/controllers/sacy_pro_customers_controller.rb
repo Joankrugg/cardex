@@ -3,7 +3,7 @@ class SacyProCustomersController < ApplicationController
   before_action :set_sacy_pro_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @sacy_pro_customers = SacyProCustomer.sacy_pro_search(params[:search]).paginate(page: params[:page], per_page: 150)
+      @sacy_pro_customers = SacyProCustomer.sacy_pro_search(params[:search])
       respond_to do |format|
         format.html
         format.csv { send_data @sacy_pro_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

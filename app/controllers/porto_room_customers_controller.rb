@@ -3,7 +3,7 @@ class PortoRoomCustomersController < ApplicationController
   before_action :set_porto_room_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @porto_room_customers = PortoRoomCustomer.porto_room_search(params[:search]).paginate(page: params[:page], per_page: 150)
+      @porto_room_customers = PortoRoomCustomer.porto_room_search(params[:search])
       respond_to do |format|
         format.html
         format.csv { send_data @porto_room_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

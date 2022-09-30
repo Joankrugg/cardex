@@ -3,7 +3,7 @@ class RabaCustomersController < ApplicationController
   before_action :set_raba_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @raba_customers = RabaCustomer.raba_search(params[:search]).paginate(page: params[:page], per_page: 150)
+      @raba_customers = RabaCustomer.raba_search(params[:search])
       respond_to do |format|
         format.html
         format.csv { send_data @raba_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

@@ -3,7 +3,7 @@ class TheouleSpaCustomersController < ApplicationController
   before_action :set_theoule_spa_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @theoule_spa_customers = TheouleSpaCustomer.theoule_spa_search(params[:search]).paginate(page: params[:page], per_page: 150)
+      @theoule_spa_customers = TheouleSpaCustomer.theoule_spa_search(params[:search])
       respond_to do |format|
         format.html
         format.csv { send_data @theoule_spa_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
