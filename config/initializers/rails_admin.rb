@@ -4,45 +4,7 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless current_user && current_user.admin
   end
 
-  config.model 'Customer' do
-    list do
-        # simply adding fields by their names (order will be maintained)
-      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
-      items_per_page 100
-    end
-  end
 
-  config.model 'BrindosProCustomer' do
-    list do
-        # simply adding fields by their names (order will be maintained)
-      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
-      items_per_page 100
-    end
-  end
-
-  config.model 'LeognanProCustomer' do
-    list do
-        # simply adding fields by their names (order will be maintained)
-      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
-      items_per_page 100
-    end
-  end
-
-  config.model 'RabaProCustomer' do
-    list do
-        # simply adding fields by their names (order will be maintained)
-      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
-      items_per_page 100
-    end
-  end
-
-  config.model 'SacyProCustomer' do
-    list do
-        # simply adding fields by their names (order will be maintained)
-      include_fields :firm, :surname, :name, :activity, :type, :sector, :country, :home
-      items_per_page 100
-    end
-  end
   ### Popular gems integration
 
   ## == Devise ==
