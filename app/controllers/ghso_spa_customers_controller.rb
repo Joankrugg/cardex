@@ -4,7 +4,7 @@ class GhsoSpaCustomersController < ApplicationController
 
   def index
     if params[:search].present?
-      @ghso_spa_customers = GhsoSpaCustomer.ghso_spa_search(params[:search]).paginate(page: params[:page], per_page: 30)
+      @ghso_spa_customers = GhsoSpaCustomer.ghso_spa_search(params[:search]).paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @ghso_spa_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

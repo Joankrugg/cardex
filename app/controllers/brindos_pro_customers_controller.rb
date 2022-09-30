@@ -4,7 +4,7 @@ class BrindosProCustomersController < ApplicationController
 
   def index
     if params[:search].present?
-      @brindos_pro_customers = BrindosProCustomer.brindos_pro_search(params[:search]).paginate(page: params[:page], per_page: 30)
+      @brindos_pro_customers = BrindosProCustomer.brindos_pro_search(params[:search]).paginate(page: params[:page], per_page: 100)
       respond_to do |format|
         format.html
         format.csv { send_data @brindos_pro_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
