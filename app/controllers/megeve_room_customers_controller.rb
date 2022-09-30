@@ -3,7 +3,7 @@ class MegeveRoomCustomersController < ApplicationController
   before_action :set_megeve_room_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @megeve_room_customers = MegeveRoomCustomer.megeve_room_search(params[:search])
+      @megeve_room_customers = MegeveRoomCustomer.megeve_room_search(params[:search]).paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @megeve_room_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

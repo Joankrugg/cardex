@@ -112,7 +112,9 @@
       <% end %>
     </div>
     <div class="footer">
-      <p class='pagination'><%= will_paginate @brindos_pro_customers %></p>
+      <% if @brindos_pro_customers.total_pages.present? %>
+        <p class='pagination'><%= will_paginate @brindos_pro_customers %></p>
+      <% end %>
     </div>
   </div>
   <br>

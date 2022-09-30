@@ -3,7 +3,7 @@ class MillesimeCustomersController < ApplicationController
   before_action :set_millesime_customer, only: [ :edit, :update ]
   def index
     if params[:search].present?
-      @millesime_customers = MillesimeCustomer.millesime_search(params[:search])
+      @millesime_customers = MillesimeCustomer.millesime_search(params[:search]).paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @millesime_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
