@@ -9,7 +9,7 @@ class LeognanProCustomersController < ApplicationController
         format.csv { send_data @leognan_pro_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @leognan_pro_customers = LeognanProCustomer.all.paginate(page: params[:page], per_page: 30)
+      @leognan_pro_customers = LeognanProCustomer.all.paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @leognan_pro_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

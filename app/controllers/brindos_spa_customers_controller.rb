@@ -10,7 +10,7 @@ class BrindosSpaCustomersController < ApplicationController
         format.csv { send_data @brindos_spa_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @brindos_spa_customers = BrindosSpaCustomer.all.paginate(page: params[:page], per_page: 30)
+      @brindos_spa_customers = BrindosSpaCustomer.all.paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @brindos_spa_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

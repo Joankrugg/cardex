@@ -9,7 +9,7 @@ class PortoCustomersController < ApplicationController
         format.csv { send_data @porto_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @porto_customers = PortoCustomer.all.paginate(page: params[:page], per_page: 30)
+      @porto_customers = PortoCustomer.all.paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @porto_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

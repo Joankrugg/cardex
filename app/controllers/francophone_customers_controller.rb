@@ -9,7 +9,7 @@ class FrancophoneCustomersController < ApplicationController
         format.csv { send_data @francophone_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @francophone_customers = FrancophoneCustomer.all.paginate(page: params[:page], per_page: 30)
+      @francophone_customers = FrancophoneCustomer.all.paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @francophone_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

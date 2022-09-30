@@ -9,7 +9,7 @@ class RabaProCustomersController < ApplicationController
         format.csv { send_data @raba_pro_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @raba_pro_customers = RabaProCustomer.all.paginate(page: params[:page], per_page: 30)
+      @raba_pro_customers = RabaProCustomer.all.paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @raba_pro_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}

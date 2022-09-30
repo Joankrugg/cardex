@@ -9,7 +9,7 @@ class SacySpaCustomersController < ApplicationController
         format.csv { send_data @sacy_spa_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
       end
     else
-      @sacy_spa_customers = SacySpaCustomer.all.paginate(page: params[:page], per_page: 30)
+      @sacy_spa_customers = SacySpaCustomer.all.paginate(page: params[:page], per_page: 150)
       respond_to do |format|
         format.html
         format.csv { send_data @sacy_spa_customers.to_csv(['name', 'email', 'genre', 'city', 'country'])}
