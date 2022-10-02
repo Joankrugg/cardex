@@ -48,6 +48,11 @@
               Cocorico
             </div>
           </div>
+          <div class="col-lg-3 mx-auto space">
+            <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#millesime">
+              Millesime
+            </div>
+          </div>
         </div>
 
         <div class="row">
@@ -349,4 +354,27 @@
   </div>
 </div>
 
+<div class="modal fade" id="millesime" tabindex="-1" aria-labelledby="cardex-millesime" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardex-millesime">Cardex de millesime</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <%= link_to "Millesime", millesime_customers_path, class: 'cardex-segment' %>
+          </div>
+          <div class="row">
+            <%= link_to "Millesime FR", francophone_customers_path, class: 'cardex-segment'  %>
+          </div>
+          <div class="row">
+            <%= link_to "Millesime EN", anglophone_customers_path, class: 'cardex-segment'  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
