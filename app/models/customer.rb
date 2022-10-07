@@ -1,5 +1,4 @@
 class Customer < ApplicationRecord
-  validates :email, uniqueness: true
   belongs_to :sector, optional: true
   belongs_to :creator, optional: true
   belongs_to :type, optional: true

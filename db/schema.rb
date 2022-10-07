@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_30_122908) do
+ActiveRecord::Schema.define(version: 2022_10_07_124758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -221,7 +221,6 @@ ActiveRecord::Schema.define(version: 2022_09_30_122908) do
     t.string "phone"
     t.string "genre"
     t.bigint "type_id"
-    t.string "type_name"
     t.string "firm"
     t.datetime "birth"
     t.string "language"
@@ -713,6 +712,35 @@ ActiveRecord::Schema.define(version: 2022_09_30_122908) do
     t.string "activity"
   end
 
+  create_table "sales_reviews", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "address"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.string "position"
+    t.string "phone"
+    t.string "firm"
+    t.string "language"
+    t.string "note"
+    t.string "state"
+    t.string "activity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "sector_id"
+    t.bigint "creator_id"
+    t.bigint "type_id"
+    t.bigint "home_id"
+    t.datetime "birth"
+    t.index ["creator_id"], name: "index_sales_reviews_on_creator_id"
+    t.index ["home_id"], name: "index_sales_reviews_on_home_id"
+    t.index ["sector_id"], name: "index_sales_reviews_on_sector_id"
+    t.index ["type_id"], name: "index_sales_reviews_on_type_id"
+  end
+
   create_table "sectors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -826,4 +854,8 @@ ActiveRecord::Schema.define(version: 2022_09_30_122908) do
   add_foreign_key "sacy_pro_customers", "homes"
   add_foreign_key "sacy_pro_customers", "sectors"
   add_foreign_key "sacy_pro_customers", "types"
+  add_foreign_key "sales_reviews", "creators"
+  add_foreign_key "sales_reviews", "homes"
+  add_foreign_key "sales_reviews", "sectors"
+  add_foreign_key "sales_reviews", "types"
 end
