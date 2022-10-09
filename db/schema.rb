@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_09_083221) do
+ActiveRecord::Schema.define(version: 2022_10_09_091614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -660,6 +660,12 @@ ActiveRecord::Schema.define(version: 2022_10_09_083221) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
+    t.datetime "first_visit"
+    t.datetime "last_visit"
+    t.datetime "sacy_restaurant_first_visit"
+    t.datetime "sacy_restaurant_last_visit"
+    t.datetime "sacy_spa_first_visit"
+    t.datetime "sacy_spa_last_visit"
   end
 
   create_table "sacy_pro_customers", force: :cascade do |t|
