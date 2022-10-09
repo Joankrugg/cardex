@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_09_080846) do
+ActiveRecord::Schema.define(version: 2022_10_09_083221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -537,6 +537,12 @@ ActiveRecord::Schema.define(version: 2022_10_09_080846) do
     t.string "birth"
     t.string "segment"
     t.boolean "unsubscribe", default: false
+    t.datetime "first_visit"
+    t.datetime "last_visit"
+    t.datetime "raba_restaurant_first_visit"
+    t.datetime "raba_restaurant_last_visit"
+    t.datetime "raba_spa_first_visit"
+    t.datetime "raba_spa_last_visit"
   end
 
   create_table "raba_pro_customers", force: :cascade do |t|
@@ -598,6 +604,8 @@ ActiveRecord::Schema.define(version: 2022_10_09_080846) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "activity"
+    t.datetime "raba_restaurant_first_visit"
+    t.datetime "raba_restaurant_last_visit"
   end
 
   create_table "raba_room_customers", force: :cascade do |t|
@@ -616,6 +624,8 @@ ActiveRecord::Schema.define(version: 2022_10_09_080846) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "activity"
+    t.datetime "first_visit"
+    t.datetime "last_visit"
   end
 
   create_table "raba_spa_customers", force: :cascade do |t|
@@ -633,6 +643,8 @@ ActiveRecord::Schema.define(version: 2022_10_09_080846) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
     t.string "activity"
+    t.datetime "raba_spa_first_visit"
+    t.datetime "raba_spa_last_visit"
   end
 
   create_table "sacy_customers", force: :cascade do |t|
