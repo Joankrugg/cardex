@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_09_101933) do
+ActiveRecord::Schema.define(version: 2022_10_10_155010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -213,6 +213,9 @@ ActiveRecord::Schema.define(version: 2022_10_09_101933) do
     t.boolean "unsubscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "last_visit"
+    t.string "note"
+    t.integer "people"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -843,6 +846,7 @@ ActiveRecord::Schema.define(version: 2022_10_09_101933) do
     t.datetime "theoule_spa_last_visit"
     t.datetime "theoule_beach_first_visit"
     t.datetime "theoule_beach_last_visit"
+    t.string "language"
   end
 
   create_table "theoule_restaurant_customers", force: :cascade do |t|
@@ -862,6 +866,7 @@ ActiveRecord::Schema.define(version: 2022_10_09_101933) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "theoule_restaurant_first_visit"
     t.datetime "theoule_restaurant_last_visit"
+    t.string "language"
   end
 
   create_table "theoule_spa_customers", force: :cascade do |t|
