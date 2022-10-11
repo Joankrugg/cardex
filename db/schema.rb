@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_10_155010) do
+ActiveRecord::Schema.define(version: 2022_10_11_123539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -537,6 +537,25 @@ ActiveRecord::Schema.define(version: 2022_10_10_155010) do
     t.datetime "last_visit"
   end
 
+  create_table "quotations", force: :cascade do |t|
+    t.string "firm"
+    t.string "zipcode"
+    t.string "surname"
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "purpose"
+    t.string "rooming_place"
+    t.string "fooding_place"
+    t.integer "people"
+    t.datetime "demand_date"
+    t.date "event_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "creator_id"
+    t.index ["creator_id"], name: "index_quotations_on_creator_id"
+  end
+
   create_table "raba_customers", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -921,6 +940,7 @@ ActiveRecord::Schema.define(version: 2022_10_10_155010) do
   add_foreign_key "leognan_pro_customers", "homes"
   add_foreign_key "leognan_pro_customers", "sectors"
   add_foreign_key "leognan_pro_customers", "types"
+  add_foreign_key "quotations", "creators"
   add_foreign_key "raba_pro_customers", "creators"
   add_foreign_key "raba_pro_customers", "homes"
   add_foreign_key "raba_pro_customers", "sectors"
