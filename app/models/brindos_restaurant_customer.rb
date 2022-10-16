@@ -1,4 +1,5 @@
 class BrindosRestaurantCustomer < ApplicationRecord
+  validates :email, uniqueness: true
   include PgSearch::Model
   pg_search_scope :brindos_restaurant_search,
     against: [ :city, :country, :name, :genre, :email, :unsubscribe ],
