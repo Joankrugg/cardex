@@ -1,0 +1,2 @@
+class RabaEphemeralRestaurantCustomer < ApplicationRecord
+end

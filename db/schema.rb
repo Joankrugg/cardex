@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_17_090317) do
+ActiveRecord::Schema.define(version: 2022_10_17_133141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -531,6 +531,10 @@ ActiveRecord::Schema.define(version: 2022_10_17_090317) do
     t.string "home"
     t.string "address"
     t.boolean "unsubscribe", default: false
+    t.datetime "brindos_restaurant_last_visit"
+    t.datetime "brindos_last_visit"
+    t.datetime "brindos_spa_last_visit"
+    t.datetime "brindos_bubble_last_buy"
   end
 
   create_table "msociety_customers", force: :cascade do |t|
@@ -667,6 +671,66 @@ ActiveRecord::Schema.define(version: 2022_10_17_090317) do
     t.datetime "raba_restaurant_last_visit"
     t.datetime "raba_spa_first_visit"
     t.datetime "raba_spa_last_visit"
+  end
+
+  create_table "raba_ephemeral_restaurant_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.datetime "birth"
+    t.string "segment"
+    t.boolean "unsubscribe"
+    t.string "activity"
+    t.datetime "raba_ephemeral_restaurant_last_visit"
+    t.integer "raba_ephemeral_restaurant_visit_number"
+    t.string "newsletter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "raba_marguerite_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.datetime "birth"
+    t.string "segment"
+    t.boolean "unsubscribe"
+    t.string "activity"
+    t.datetime "raba_marguerite_last_visit"
+    t.integer "raba_marguerite_visit_number"
+    t.string "newsletter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "raba_petits_caprices_customers", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.string "genre"
+    t.string "zipcode"
+    t.string "city"
+    t.string "country"
+    t.datetime "birth"
+    t.string "segment"
+    t.boolean "unsubscribe"
+    t.string "activity"
+    t.datetime "raba_petits_caprices_last_visit"
+    t.integer "raba_petits_caprices_visit_number"
+    t.string "newsletter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "raba_pro_customers", force: :cascade do |t|
