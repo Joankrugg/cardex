@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_17_144652) do
+ActiveRecord::Schema.define(version: 2022_10_17_172248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -539,6 +539,26 @@ ActiveRecord::Schema.define(version: 2022_10_17_144652) do
     t.datetime "leognan_last_visit"
     t.datetime "leognan_spa_last_visit"
     t.datetime "leognan_bubble_last_buy"
+    t.datetime "megeve_restaurant_last_visit"
+    t.datetime "megeve_last_visit"
+    t.datetime "megeve_spa_last_visit"
+    t.datetime "megeve_bubble_last_buy"
+    t.datetime "porto_restaurant_last_visit"
+    t.datetime "porto_last_visit"
+    t.datetime "porto_spa_last_visit"
+    t.datetime "porto_bubble_last_buy"
+    t.datetime "raba_restaurant_last_visit"
+    t.datetime "raba_last_visit"
+    t.datetime "raba_spa_last_visit"
+    t.datetime "raba_bubble_last_buy"
+    t.datetime "sacy_restaurant_last_visit"
+    t.datetime "sacy_last_visit"
+    t.datetime "sacy_spa_last_visit"
+    t.datetime "sacy_bubble_last_buy"
+    t.datetime "theoule_restaurant_last_visit"
+    t.datetime "theoule_last_visit"
+    t.datetime "theoule_spa_last_visit"
+    t.datetime "theoule_beach_last_visit"
   end
 
   create_table "msociety_customers", force: :cascade do |t|
