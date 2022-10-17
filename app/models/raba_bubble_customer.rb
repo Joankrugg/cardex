@@ -1,0 +1,2 @@
+class RabaBubbleCustomer < ApplicationRecord
+end

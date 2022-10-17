@@ -1,0 +1,2 @@
+class BrindosBubbleCustomer < ApplicationRecord
+end

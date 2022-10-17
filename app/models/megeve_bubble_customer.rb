@@ -1,0 +1,2 @@
+class MegeveBubbleCustomer < ApplicationRecord
+end

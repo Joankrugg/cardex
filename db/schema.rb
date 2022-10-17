@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_16_164505) do
+ActiveRecord::Schema.define(version: 2022_10_17_090317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,19 @@ ActiveRecord::Schema.define(version: 2022_10_16_164505) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
+  end
+
+  create_table "brindos_bubble_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "buy_date"
+    t.string "title"
+    t.integer "price"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "brindos_customers", force: :cascade do |t|
@@ -312,6 +325,19 @@ ActiveRecord::Schema.define(version: 2022_10_16_164505) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "leognan_bubble_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "buy_date"
+    t.string "title"
+    t.integer "price"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "leognan_customers", force: :cascade do |t|
     t.string "genre"
     t.string "name"
@@ -413,6 +439,19 @@ ActiveRecord::Schema.define(version: 2022_10_16_164505) do
     t.index ["user_id"], name: "index_mail_orders_on_user_id"
   end
 
+  create_table "megeve_bubble_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "buy_date"
+    t.string "title"
+    t.integer "price"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "megeve_customers", force: :cascade do |t|
     t.string "genre"
     t.string "name"
@@ -511,6 +550,19 @@ ActiveRecord::Schema.define(version: 2022_10_16_164505) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "porto_bubble_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "buy_date"
+    t.string "title"
+    t.integer "price"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "porto_customers", force: :cascade do |t|
     t.string "genre"
     t.string "name"
@@ -581,6 +633,19 @@ ActiveRecord::Schema.define(version: 2022_10_16_164505) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "creator_id"
     t.index ["creator_id"], name: "index_quotations_on_creator_id"
+  end
+
+  create_table "raba_bubble_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "buy_date"
+    t.string "title"
+    t.integer "price"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "raba_customers", force: :cascade do |t|
@@ -706,6 +771,19 @@ ActiveRecord::Schema.define(version: 2022_10_16_164505) do
     t.string "activity"
     t.datetime "raba_spa_first_visit"
     t.datetime "raba_spa_last_visit"
+  end
+
+  create_table "sacy_bubble_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "buy_date"
+    t.string "title"
+    t.integer "price"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sacy_customers", force: :cascade do |t|
@@ -871,6 +949,19 @@ ActiveRecord::Schema.define(version: 2022_10_16_164505) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "theoule_beach_first_visit"
     t.datetime "theoule_beach_last_visit"
+  end
+
+  create_table "theoule_bubble_customers", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "surname"
+    t.string "buy_date"
+    t.string "title"
+    t.integer "price"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "theoule_customers", force: :cascade do |t|

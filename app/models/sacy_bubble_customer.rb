@@ -1,0 +1,2 @@
+class SacyBubbleCustomer < ApplicationRecord
+end
