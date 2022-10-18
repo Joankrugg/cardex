@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_115957) do
+ActiveRecord::Schema.define(version: 2022_10_18_124326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -447,7 +447,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_115957) do
     t.string "genre"
     t.string "name"
     t.string "surname"
-    t.string "buy_date"
+    t.string "megeve_bubble_buy_date"
     t.string "title"
     t.integer "price"
     t.string "email"
@@ -476,6 +476,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_115957) do
     t.datetime "megeve_restaurant_last_visit"
     t.datetime "megeve_spa_first_visit"
     t.datetime "megeve_spa_last_visit"
+    t.datetime "megeve_bubble_buy_date"
   end
 
   create_table "megeve_restaurant_customers", force: :cascade do |t|
@@ -673,7 +674,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_115957) do
     t.string "genre"
     t.string "name"
     t.string "surname"
-    t.string "buy_date"
+    t.string "raba_bubble_buy_date"
     t.string "title"
     t.integer "price"
     t.string "email"
@@ -702,6 +703,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_115957) do
     t.datetime "raba_restaurant_last_visit"
     t.datetime "raba_spa_first_visit"
     t.datetime "raba_spa_last_visit"
+    t.datetime "raba_bubble_buy_date"
   end
 
   create_table "raba_ephemeral_restaurant_customers", force: :cascade do |t|
@@ -872,7 +874,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_115957) do
     t.string "genre"
     t.string "name"
     t.string "surname"
-    t.string "buy_date"
+    t.string "sacy_bubble_buy_date"
     t.string "title"
     t.integer "price"
     t.string "email"
@@ -901,6 +903,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_115957) do
     t.datetime "sacy_restaurant_last_visit"
     t.datetime "sacy_spa_first_visit"
     t.datetime "sacy_spa_last_visit"
+    t.datetime "sacy_bubble_buy_date"
   end
 
   create_table "sacy_pro_customers", force: :cascade do |t|
