@@ -47,6 +47,7 @@ class SacyRestaurantCustomersController < ApplicationController
     @sacy_restaurant_customers = SacyRestaurantCustomer.all
     @sacy_restaurant_customers.each do |rb|
       if rb.email.present?
+        next if rb.email == nil
         if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
           rb.unsubscribe = true
           rb.save!
