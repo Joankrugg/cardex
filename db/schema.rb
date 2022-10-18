@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_082400) do
+ActiveRecord::Schema.define(version: 2022_10_18_083540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -337,6 +337,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_082400) do
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "segment"
   end
 
   create_table "leognan_customers", force: :cascade do |t|
@@ -451,6 +452,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_082400) do
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "segment"
   end
 
   create_table "megeve_customers", force: :cascade do |t|
@@ -676,6 +678,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_082400) do
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "segment"
   end
 
   create_table "raba_customers", force: :cascade do |t|
@@ -874,6 +877,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_082400) do
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "segment"
   end
 
   create_table "sacy_customers", force: :cascade do |t|
@@ -1052,6 +1056,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_082400) do
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "segment"
   end
 
   create_table "theoule_customers", force: :cascade do |t|
