@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_112750) do
+ActiveRecord::Schema.define(version: 2022_10_18_115957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -331,7 +331,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_112750) do
     t.string "genre"
     t.string "name"
     t.string "surname"
-    t.string "buy_date"
+    t.string "leognan_bubble_buy_date"
     t.string "title"
     t.integer "price"
     t.string "email"
@@ -358,6 +358,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_112750) do
     t.datetime "last_visit"
     t.datetime "leognan_restaurant_first_visit"
     t.datetime "leognan_restaurant_last_visit"
+    t.datetime "leognan_bubble_buy_date"
   end
 
   create_table "leognan_pro_customers", force: :cascade do |t|
