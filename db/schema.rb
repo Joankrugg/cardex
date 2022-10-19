@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_19_084517) do
+ActiveRecord::Schema.define(version: 2022_10_19_090303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -471,7 +471,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_084517) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "megeve_last_visit"
     t.datetime "megeve_restaurant_first_visit"
     t.datetime "megeve_restaurant_last_visit"
     t.datetime "megeve_spa_first_visit"
@@ -518,7 +518,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_084517) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "activity"
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "megeve_last_visit"
   end
 
   create_table "millesime_customers", force: :cascade do |t|
