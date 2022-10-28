@@ -53,9 +53,6 @@
               Millesime
             </div>
           </div>
-        </div>
-
-        <div class="row">
           <div class="col-lg-3 mx-auto space">
             <div class="btn btn-nav-pro center" data-bs-toggle="modal" data-bs-target="#mail_order">Commande d'email</div>
           </div>
@@ -63,12 +60,14 @@
           <div class="col-lg-3 mx-auto space">
             <a href="https://api.whatsapp.com/send?phone=33652751072"><div class="btn btn-nav-pro center">Envoyer un message</div></a>
           </div>
-        </div>
-
-        <div class="row">
           <%= link_to customers_path do %>
             <div class="col-lg-3 mx-auto space">
               <div class="btn btn-nav-pro center">Le MICE par Millésime</div>
+            </div>
+          <% end %>
+          <%= link_to custom_lists_path do %>
+            <div class="col-lg-3 mx-auto space">
+              <div class="btn btn-nav-pro center">Custom list</div>
             </div>
           <% end %>
         </div>
@@ -377,4 +376,6 @@
     </div>
   </div>
 </div>
+
+
 

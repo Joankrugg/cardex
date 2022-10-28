@@ -36,7 +36,7 @@ class MillesimeCustomersController < ApplicationController
   end
 
   def update
-    if @megeve_customer.update(megeve_customer_params)
+    if @millesime_customer.update(millesime_customer_params)
     else
       render :edit
     end

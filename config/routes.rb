@@ -38,6 +38,11 @@
     collection {get :clean}
     collection {get :export}
   end
+  resources :custom_lists do
+    collection {post :import}
+    collection {get :clean}
+    collection {get :export}
+  end
   resources :brindos_customers do
     collection {post :import}
     collection {get :clean}

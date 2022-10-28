@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_19_090303) do
+ActiveRecord::Schema.define(version: 2022_10_21_124450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -477,6 +477,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "megeve_spa_first_visit"
     t.datetime "megeve_spa_last_visit"
     t.datetime "megeve_bubble_buy_date"
+    t.integer "night"
   end
 
   create_table "megeve_restaurant_customers", force: :cascade do |t|
@@ -519,6 +520,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.string "activity"
     t.datetime "first_visit"
     t.datetime "megeve_last_visit"
+    t.integer "night"
   end
 
   create_table "millesime_customers", force: :cascade do |t|
@@ -612,7 +614,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "porto_last_visit"
   end
 
   create_table "porto_restaurant_customers", force: :cascade do |t|
@@ -648,7 +650,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "porto_last_visit"
   end
 
   create_table "quotations", force: :cascade do |t|
@@ -682,6 +684,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "segment"
+    t.string "box_number"
   end
 
   create_table "raba_customers", force: :cascade do |t|
@@ -698,7 +701,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.string "segment"
     t.boolean "unsubscribe", default: false
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "raba_last_visit"
     t.datetime "raba_restaurant_first_visit"
     t.datetime "raba_restaurant_last_visit"
     t.datetime "raba_spa_first_visit"
@@ -848,7 +851,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "activity"
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "raba_last_visit"
   end
 
   create_table "raba_spa_customers", force: :cascade do |t|
@@ -898,7 +901,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "sacy_last_visit"
     t.datetime "sacy_restaurant_first_visit"
     t.datetime "sacy_restaurant_last_visit"
     t.datetime "sacy_spa_first_visit"
@@ -974,7 +977,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "activity"
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "sacy_last_visit"
   end
 
   create_table "sacy_spa_customers", force: :cascade do |t|
@@ -1078,7 +1081,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_090303) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "unsubscribe", default: false
     t.datetime "first_visit"
-    t.datetime "last_visit"
+    t.datetime "theoule_last_visit"
     t.datetime "theoule_restaurant_first_visit"
     t.datetime "theoule_restaurant_last_visit"
     t.datetime "theoule_spa_first_visit"
