@@ -26,7 +26,6 @@ class BrindosCustomersController < ApplicationController
     @brindos_customer = BrindosCustomer.new(brindos_customer_params)
     if @brindos_customer.save
       redirect_to root_path
-
     else
       render :new
     end
@@ -54,6 +53,11 @@ class BrindosCustomersController < ApplicationController
         end
       end
     end
+    redirect_to brindos_customers_path
+  end
+
+  def fusion
+    BrindosCustomer.where.not(id: BrindosCustomer.group(:email).select("min(id)")).delete_all
     redirect_to brindos_customers_path
   end
 

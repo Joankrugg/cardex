@@ -15,12 +15,12 @@
     collection {post :import}
   end
   devise_for :users
-
   resources :contacts
 
   resources :customers do
     collection {post :import }
     collection {get :clean}
+    collection {get :fusion}
     collection {get :export}
   end
   resources :millesime_customers do
@@ -46,6 +46,7 @@
   resources :brindos_customers do
     collection {post :import}
     collection {get :clean}
+    collection {get :fusion}
     collection {get :export}
   end
   resources :brindos_pro_customers do

@@ -41,6 +41,10 @@ class CustomersController < ApplicationController
       render :edit
     end
   end
+  def fusion
+    Customer.where.not(id: Customer.group(:email).select("min(id)")).delete_all
+    redirect_to customers_path
+  end
 
   def import
     Customer.import(params[:file])
