@@ -36,8 +36,8 @@ class RabaRestaurantCustomersController < ApplicationController
   end
 
   def update
-    if @raba_customer.update(raba_customer_params)
-      redirect_to raba_customers_path
+    if @raba_restaurant_customer.update(raba_restaurant_customer_params)
+      redirect_to raba_restaurant_customers_path
     else
       render :edit
     end
@@ -47,12 +47,19 @@ class RabaRestaurantCustomersController < ApplicationController
     @raba_restaurant_customers = RabaRestaurantCustomer.all
     @raba_restaurant_customers.each do |rb|
       if rb.email.present?
+        rb.email = rb.email.downcase
+        rb.save!
         if rb.email.include?('guest.booking.com') || rb.email.include?('expedia') || rb.email.include?('staycation.co')
           rb.unsubscribe = true
           rb.save!
         end
       end
     end
+    redirect_to raba_restaurant_customers_path
+  end
+
+  def fusion
+    RabaRestaurantCustomer.where.not(id: RabaRestaurantCustomer.group(:email).select("min(id)")).delete_all
     redirect_to raba_restaurant_customers_path
   end
 

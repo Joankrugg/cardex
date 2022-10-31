@@ -116,6 +116,7 @@
   resources :raba_restaurant_customers do
     collection {post :import}
     collection {get :clean}
+    collection {get :fusion}
     collection {get :export}
   end
   resources :raba_spa_customers do

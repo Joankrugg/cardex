@@ -20,7 +20,7 @@
     <div class="container">
       <div class="row action-buttons">
         <div class="col-3 mx-auto">
-          <%= link_to "Créer un client du Soleil d'or", new_raba_restaurant_customer_path, class: 'btn btn-validate' %>
+          <%= link_to "Créer un client de Raba restos", new_raba_restaurant_customer_path, class: 'btn btn-validate' %>
         </div>
         <div class="col-3 mx-auto">
           <form enctype="multipart/form-data" action="/raba_restaurant_customers/import" accept-charset="UTF-8" method="post" class='import'><input type="hidden" name="authenticity_token" value="SzUvUwGk4iw8rAUxiidkvP0sINcbIdCDvYGQuTzr1nUfuadjaPkE8h9heKLeq7fNngNA/RmF5w3EyupKmEiylg==">
@@ -32,7 +32,7 @@
           </form>
         </div>
         <div class="col-3 mx-auto">
-          <%= link_to 'Télécharger un CSV', raba_restaurant_customers_path(format: "csv"), class: 'btn btn-validate' %>
+          <%= link_to 'Effacer doublons', fusion_raba_restaurant_customers_path, class: 'btn btn-validate' %>
         </div>
         <div class="col-3 mx-auto">
           <%= link_to 'Nettoyer', clean_raba_restaurant_customers_path, class: 'btn btn-validate' %>
