@@ -4,7 +4,9 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless current_user && current_user.admin
   end
 
-
+  config.model 'AnglophoneCustomer' do
+    label 'ClientAnglais'
+  end
   ### Popular gems integration
 
   ## == Devise ==
