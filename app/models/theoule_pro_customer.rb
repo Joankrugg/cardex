@@ -1,0 +1,2 @@
+class TheouleProCustomer < ApplicationRecord
+end

@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem "net-http"
 gem 'csv-importer'
 gem 'activerecord-import', '~> 0.15.0'
 gem 'rails_admin', '~> 3.0'
@@ -39,7 +40,7 @@ gem 'pg_search', '~> 2.3.0'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
-gem 'simple_form', github: 'heartcombo/simple_form'
+gem 'simple_form', github: 'heartcombo/simple_form', branch: 'main'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

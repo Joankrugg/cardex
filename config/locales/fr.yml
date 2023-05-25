@@ -103,6 +103,7 @@ fr:
       theoule_customer: "cardex theoule loisir"
       theoule_restaurant_customer: "cardex theoule restaurant"
       theoule_spa_customer: "cardex theoule spa"
+      theoule_pro_customer: "cardex pro theoule"
       type: "type"
       user: "utilisateur"
   admin:
