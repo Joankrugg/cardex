@@ -25,7 +25,6 @@ class MillesimeCustomersController < ApplicationController
     @millesime_customer = MillesimeCustomer.new(millesime_customer_params)
     if @millesime_customer.save
       redirect_to root_path
-
     else
       render :new
     end
@@ -37,6 +36,7 @@ class MillesimeCustomersController < ApplicationController
 
   def update
     if @millesime_customer.update(millesime_customer_params)
+      redirect_to customers_path
     else
       render :edit
     end

@@ -1,0 +1,61 @@
+<div class="zone"></div>
+<div class="container form-for-new">
+  <p>Mieux vous connaître c'est mieux vous servir et vous proposer une expérience toujours plus proche de vos envies </p>
+  <%= simple_form_for @millesime_customer do |f| %>
+    <div class="row">
+      <div class="col-lg-8 col-md-9 col-sm-10 col-12 mx-auto form">
+        <h3>Client Millesime</h3>
+        <%= link_to millesime_customers_path do %>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        <% end %>
+        <div class="row">
+          <p>Pouvez-vous, tout d'abord, nous indiquer vos noms et prénoms ? </p>
+          <div class="col-2">
+            <%= f.input :genre, label:'Titre' %>
+          </div>
+          <div class="col-5">
+            <%= f.input :name, required: false, label:'Nom'  %>
+          </div>
+          <div class="col-5">
+            <%= f.input :surname, label:'Prénom'  %>
+          </div>
+        </div>
+        <div class="row">
+          <p>Votre ville de résidence </p>
+          <div class="col-8">
+            <%= f.input :city, label:'Ville de résidence'  %>
+          </div>
+          <div class="col-4">
+            <%= f.input :zipcode, label:'Code postal'  %>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.input :birth, label:'date de naissance'  %>
+        </div>
+        <div class="row">
+          <p>Est-ce votre première visite dans une Maison millésime ? </p>
+        </div>
+        <div class="row">
+          <p>Quels sont les univers qui vous attirent le plus ? </p>
+        </div>
+        <div class="row">
+          <p>Quelles maisons Millésime souhaiteriez-vous découvrir ? </p>
+        </div>
+        <div class="row">
+          <%= f.input :email, required: false , label:'Email'  %>
+        </div>
+        <div class="row">
+        <%= f.input :unsubscribe, as: :radio_buttons, label:'Souhaitez recevoir nos actualités par mail ?' %>
+        </div>
+        <div class="row">
+          <p>Nous vous remercions de nous avoir accordé du temps. </p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <%= f.button :submit, 'Valider', class: 'btn btn-validate' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
