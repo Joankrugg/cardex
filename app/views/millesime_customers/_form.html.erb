@@ -33,7 +33,9 @@
           <%= f.input :birth, label:'date de naissance'  %>
         </div>
         <div class="row">
-          <p>Est-ce votre première visite dans une Maison millésime ? </p>
+          <div class="col-12">
+            <%= f.input :first_time, as: :radio_buttons, label: 'Est-ce votre première visite dans une Maison millésime ?'  %>
+          </div>
         </div>
         <div class="row">
           <p>Quels sont les univers qui vous attirent le plus ? </p>

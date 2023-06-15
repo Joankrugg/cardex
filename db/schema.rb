@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_24_121000) do
+ActiveRecord::Schema.define(version: 2023_06_15_133532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -568,6 +568,7 @@ ActiveRecord::Schema.define(version: 2023_05_24_121000) do
     t.datetime "theoule_spa_last_visit"
     t.datetime "theoule_beach_last_visit"
     t.datetime "millesime_bubble_last_buy"
+    t.boolean "first_time"
   end
 
   create_table "msociety_customers", force: :cascade do |t|
